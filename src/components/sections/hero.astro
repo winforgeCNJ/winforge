@@ -1,0 +1,74 @@
+---
+import Glow from "../ui/glow.astro";
+import { HeadinPrincipal } from '../ui/heading-principal'
+import GraphicFigureLogo from "../widgets/graphic-figure-logo.astro";
+---
+
+<section id="hero" >
+  <div class="container w-full flex flex-col items-start lg:justify-center pt-20 lg:pt-0  h-auto pb-12 lg:pb-0 lg:min-h-[calc(100vh-10rem)] relative">
+
+    <section class="z-60">
+      <HeadinPrincipal client:load words="Forjar el camino en el detalle y los valores"  className="h1 text-white lg:w-[46rem] mb-4 lg:mb-6"/>
+      <p class="text-gray-200 lg:w-[34rem] text-base lg:text-lg mb-14 animate-duration-500 animate-delay-[1200ms] animate-fade-in-up ">Guiamos tus sueños empresariales hacia el éxito en línea. ¿Listo para comenzar? No esperes mas.<br/> <span class="text-secondary"> ¡Únete y lleva tu empresa al mundo digital!</span></p>
+  
+      <div class="animate-duration-500 animate-delay-[1800ms] animate-fade-in-up flex items-center  gap-x-4">
+  
+        <a href="#about-us" class="text-sm lg:text-base inline-block tracking-widesttext-black font-inter px-4 lg:px-6 rounded-full py-2 font-bold bg-gradient-to-r bg-white btn-learn-more hover:bg-transparent border-2 border-transparent hover:border-white transition-all   hover:text-white hover:scale-[1.03] ">CONOCÉ MÁS</a>
+  
+        <a href="#contact" class="text-sm lg:text-base inline-block tracking-widest font-inter px-4 lg:px-6 rounded-full py-2 font-bold bg-gradient-to-r border-white text-white btn-learn-more hover:bg-transparent border-2 border-transparent hover:border-white hover:scale-[1.03] hover:bg-white hover:text-black hover:border-transparent transition-all">CONTACTANOS</a>
+      </div>
+    </section>
+  </div>
+</section>
+
+<GraphicFigureLogo />
+
+<div class="glow  pointer-events-none"></div>
+<Glow  className='opacity-[0.5] lg:opacity-[0.3] hidden lg:block before:right-[54%] before:bottom-[46%]'/>
+<div class="glow-2 hidden lg:block lg:text-lg pointer-events-none "></div>
+
+
+<style>
+
+.glow-2::before, .glow::after, . {
+  background: var(--primary-glow);
+  width: 240px;
+  height: 180px;
+  z-index: -1;
+}
+
+.glow::before {
+  z-index: -1;
+}
+
+.glow::before,
+.glow::after {
+  content: '';
+  top: 12%;
+  left: -32%;
+  position: absolute;
+  opacity: 10;
+  filter: blur(35px);
+  transform: translateZ(0);
+}
+
+.glow-2::before,
+.glow-2::after {
+  content: '';
+  bottom: 34%;
+  right: -2%;
+  opacity: 0.4;
+  position: absolute;
+  filter: blur(70px);
+  transform: translateZ(0);
+}
+
+
+@media (min-width: 1024px)  {
+  .glow::before,
+.glow::after {
+  left: -6%;
+
+}
+}
+</style>

@@ -1,0 +1,72 @@
+---
+import Background from '@/components/ui/background.astro'
+import Title from '@/components/ui/title.astro';
+import { aspects } from '@/consts/aspects'
+
+---
+
+<section id="about-us" class="relative overflow-hidden">
+    <div class="container relative min-h-screen flex pb-44 lg:pb-0 flex-col gap-y-4 items-start justify-center overflow-hidden">
+        <div class="mb-8 lg:mb-0">
+            <Title title='Somos' active='Winforge'/>
+            <p class="body-1 text-white w-[17.5rem] leading-5">La forja es un lugar que señala tres aspectos centrales de todo proyecto:</p>
+        </div>
+    
+        <section class="w-full flex items-center flex-col lg:flex-row justify-center gap-2 lg:w-[42.5rem] mx-auto lg:justify-between aspects">
+            {
+                aspects.map((aspect, index) => (
+                    <div class="flex flex-col  items-center justify-center lg:w-auto w-full aspect-item ">
+                        <div class="space-y-6">
+                            <img src={aspect.image} alt={`aspect image ${aspect.label}`} width="130" height="130" class="lg:w-[8.125rem] lg:h-[8.125rem] w-28 h-28"/>
+                        <p class="font-bold text-white text-center">{aspect.label}</p>
+                        </div>
+                    </div>
+                ))
+            }
+        </section>
+    
+            <hr class="lg:w-56 w-48 rounded-full h-[2px] bg-white mx-auto mt-8 "/>
+    
+            <p class="text-gray-200 w-auto lg:w-[40.5rem] mx-auto  text-justify lg:text-start md:items-center leading-6 text-lg text-balance">
+                Nuestra habilidad principal es crear los procesos que permitan formar nuevas empresas e impulsar las existentes. Nos enfocamos en la imagen, el mensaje y las plataformas digitales. <strong>Gestar una propuesta clara, insipiradora e impactante.</strong>
+            </p>
+    </div>
+
+        
+        <Background />
+</section>
+
+<style>
+     /* Estilos para el primer hijo */
+     .aspects .aspect-item:nth-child(1) {
+        align-items: start;
+    }
+
+    /* Estilos para el segundo hijo */
+    .aspects .aspect-item:nth-child(2) {
+        align-items: center;
+    }
+
+    /* Estilos para el tercer hijo y posteriores */
+    .aspects .aspect-item:nth-child(n + 3) {
+        align-items: flex-end;
+    }
+
+
+    @media (min-width: 768px) {
+     /* Estilos para el primer hijo */
+     .aspects .aspect-item:nth-child(1) {
+        align-items: center;
+    }
+
+    /* Estilos para el segundo hijo */
+    .aspects .aspect-item:nth-child(2) {
+        align-items: center;
+    }
+
+    /* Estilos para el tercer hijo y posteriores */
+    .aspects .aspect-item:nth-child(n + 3) {
+        align-items: center;
+    }
+}
+</style>

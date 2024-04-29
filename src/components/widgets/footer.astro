@@ -1,0 +1,59 @@
+---
+import { navigation } from "@/consts/navigation";
+import IconArrowUpBlack from '../icons/icon-arrow-up-black.astro'
+import IconArrowUp from '../icons/icon-arrow-up.astro'
+import Logo from "./logo.astro";
+import Socials from "./socials.astro";
+
+---
+
+<footer class="relative bg-black/90 ">
+    <div class="container flex flex-col lg:flex-row items-center justify-between w-full pt-0 lg:pt-16   overflow-hidden gap-y-6 lg:gap-y-12 pb-10 relative">
+        <Logo />
+    
+        <nav class="flex items-center justify-center  flex-wrap lg:flex-nowrap">
+    
+        {
+            navigation.map(nav => (
+            <a class={`${nav.borderStyle && 'hidden'} relative inline-block  
+                    lg:py-8
+                    py-6
+                    text-white px-6 group border-white after:h-full after:w-[1px] after:bg-white after:absolute after:top-0 after:right-0 after:rounded-full lg:text-xl hover:-translate-y-1 transition-transform  ${nav.id === 4 && 'after:hidden'} `} href={nav.href}>{nav.title}
+    
+                <span class="group-hover:opacity-100 transition-opacity text-white absolute  bottom-0 left-1/2 -translate-x-1/2 opacity-0  ">
+                    <IconArrowUp />
+                </span>    
+            </a>
+            ))
+        }
+        </nav>
+    
+        <Socials className="flex-col"/>
+        
+    </div>
+
+    <div class="  absolute -bottom-8  left-1/2 -translate-x-1/2 ">
+        <button id="buttonUp" class="bg-white w-24 flex  justify-center items-center h-14 text-dark-2 hover:scale-[1.04] transition-transform rounded-tr-xl rounded-tl-xl">
+            <IconArrowUpBlack />
+        </button>            
+    </div>
+
+    <div class="absolute top-0 left-0 w-full h-full -z-10 brightness-75 object-cover">
+        <img src="/background-mobile.webp" class="w-full h-full block lg:hidden" draggable="false" alt="background universe"/>
+        <img src="/background.webp" class="w-full hidden lg:block h-full" draggable="false" alt="background universe"/>
+    </div>
+    
+</footer>
+
+
+<script>
+    import { $ } from '@/lib/dom-selector'
+    const buttonUp = $('#buttonUp');
+
+    buttonUp.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' 
+        });
+    });
+</script>

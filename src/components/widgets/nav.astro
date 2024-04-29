@@ -1,0 +1,69 @@
+---
+import { navigation } from '@/consts/navigation'
+import Socials from './socials.astro'
+import { cn } from '@/lib/cn'
+import Glow from '../ui/glow.astro'
+
+interface Props {
+    className? :string
+}
+
+const { className } = Astro.props
+---
+<div class={cn("fixed top-[5.2rem] left-0 hidden transition-all duration-150 bg-black w-full lg:w-auto z-[9999] lg:pt-0 pt-16 lg:block lg:static  nav ", className)}>
+    <nav class="flex h-screen  lg:h-auto lg:pt-0   items-center lg:mx-auto lg:bg-transparent flex-col lg:flex-row  z-30 lg:pr-4 gap-4 lg:gap-0">
+        {
+            navigation.map(nav => (
+                <a class={`${nav.borderStyle && 'border-2 hover:bg-white hover:text-dark-1 transition-all t border-white rounded-full  !py-1 after:hidden lg:mx-2'} px-4 relative inline-block 
+                    lg:py-8
+                    py-2
+                    text-white  after:absolute after:w-0 after:h-0.5 after:rounded-full after:left-1/2 lg:after:bottom-4
+                    after:bottom-1 after:bg-white after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 text-2xl lg:text-base  `} href={nav.href}>{nav.title}</a>
+            ))
+        }
+        
+        <Socials className='lg:hidden flex mt-4'/>
+        <Glow  className='opacity-[0.3] lg:hidden '/>
+        <div class="absolute top-0 left-0 w-full h-full lg:hidden -z-10 opacity-15 object-cover">
+            <img src="/background-mobile.webp" draggable="false" class="w-full h-full"/>
+        </div>
+    </nav>
+</div>
+
+<script>
+    import { $$, $ } from '@/lib/dom-selector'
+    const navLinks = $$('.nav a');
+    const nav = $('.nav')
+    const menuSvg = $('#menuSvg')
+    function toggleMenu(menuMobileContent: HTMLElement | null) {
+    menuMobileContent?.classList.toggle("block")
+    menuMobileContent?.classList.toggle("hidden")
+    document.body.classList.toggle("overflow-hidden")
+    document.body.classList.toggle("lg:overflow-auto")
+}
+
+function toggleMenuIcon(menuSvg: HTMLElement | null, openNavigation: boolean) {
+       
+        const rect1 = menuSvg?.querySelector('rect:nth-child(1)')
+        const rect2 = menuSvg?.querySelector('rect:nth-child(2)')
+        
+        if (rect1 && rect2) {
+            rect1.setAttribute('y', openNavigation ? "5" : "0")
+            rect1.setAttribute('transform', `rotate(${openNavigation ? "45" : "0"})`)
+            rect2.setAttribute('y', openNavigation ? "5" : "10")
+            rect2.setAttribute('transform', `rotate(${openNavigation ? "-45" : "0"})`)
+        }
+    }
+
+
+     navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth >= 768) return
+            toggleMenu(nav);
+            
+            const openNavigation = !nav.classList.contains('hidden');
+
+            toggleMenuIcon(menuSvg, openNavigation);
+        });
+    });
+</script>
