@@ -1,0 +1,22 @@
+---
+import Background from '@/components/ui/background.astro';
+import ProjectsList from './projects-list.astro';
+import Title from '@/components/ui/title.astro'
+import Glow from '@/components/ui/glow.astro';
+---
+
+<section id="projects" class="relative">
+    <div class="container relative min-h-screen flex pb-44 lg:pb-0 flex-col gap-y-3 items-start justify-center  gap-x-12 oveflow-hidden">
+
+        <Title title='Proyectos' active='Forjados'/>
+            
+        <div  class="flex flex-col lg:flex-row items-start w-full justify-between  gap-14">
+            <p class="text-white w-auto text-start text-lg lg:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro dolorem nihil quasi nam vitae, consequatur commodi, hic necessitatibus dolor eveniet fugit doloremque explicabo praesentium voluptatibus rem eius, perferendis corrupti asperiores.
+            Deserunt animi facilis iure, fugit sequi eum, libero natus rem dolor repudiandae saepe provident laboriosam debitis. Officia animi quod ipsa et soluta fuga mollitia reprehenderit. Provident sint dolores repellendus earum.</p>
+            <ProjectsList />
+        </div>
+        
+    </div>
+    <Background />
+    <Glow  className='before:opacity-[0.5] lg:before:opacity-[0.8]  before:right-auto before:left-[24rem] before:bottom-auto before:top-24'/>
+</section>
