@@ -39,6 +39,6 @@ export const team = [
     id: 7,
     name: 'Ciro Luján',
     rol: 'Community Mannager',
-    image: '/assets/team/nose.webp',
+    image: '/assets/team/ciro.webp',
   },
 ];
