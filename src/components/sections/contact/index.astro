@@ -1,7 +1,7 @@
 ---
 import Background from '@/components/ui/background.astro';
 import Glow from '@/components/ui/glow.astro';
-import Form from './form.astro'
+import Form from './form'
 ---
 
 <section id="contact" class="relative overflow-hidden">
@@ -10,17 +10,12 @@ import Form from './form.astro'
         <!-- <div class="rounded-2xl w-full !min-w-48 h-[480px] lg:min-w-[2rem] bg-white order-1 lg:order-none"></div> -->
         <div class="calendly-inline-widget rounded-2xl w-full !min-w-48 h-full lg:min-w-[36.5rem] bg-white order-1 lg:order-none" data-url="https://calendly.com/info-roh0/30min?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:584px;height:480px;border-radius:1rem;"></div>
     
-        <section class="lg:min-w-[40rem]  ">
-            <h2 class="h2 font-bold text-white mb-1 lg:mb-0 uppercase ">Contactanos</h2>
-            <p class="text-xl text-white mb-4">Para saber más de WinForge</p>
-            <Form />
-        </section>
+        <Form client:load/>
     
-   
     </div>
 
     <Background className='top-auto bottom-12 lg:bottom-auto lg:top-0'/>
     
     <Glow className=" lg:before:-right-[2%] lg:before:bottom-[40%] before:bottom-[40rem] before:opacity-[0.4] lg:before:opacity-[0.6] before:right-[12%]"/>
     
-</section>
+</section>./form.tsx
