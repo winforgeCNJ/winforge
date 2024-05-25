@@ -40,7 +40,7 @@ export default {
             {},
         },
         '.h1': {
-          '@apply font-inter font-medium text-[2.2rem] leading-[2.8rem] md:text-[2.75rem] md:leading-[3.75rem]  lg:text-[2.8rem] lg:leading-[3.75rem] xl:text-[3.25rem] xl:leading-[3.75rem]':
+          '@apply font-inter font-medium text-[2.2rem] leading-[2.8rem] md:text-[1.4rem] md:leading-[3.75rem] lg:leading-[3.75rem] xl:text-[2.8rem] xl:leading-[3.75rem] 2xl:text-[3.25rem]':
             {},
         },
         '.h2': {
