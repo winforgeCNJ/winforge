@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "Winforge Landing Page",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -14,6 +14,7 @@
     "@astrojs/node": "^8.2.5",
     "@astrojs/react": "^3.3.0",
     "@astrojs/tailwind": "^5.1.0",
+    "@emailjs/browser": "^4.3.3",
     "@midudev/tailwind-animations": "^0.0.7",
     "@types/react": "^18.2.77",
     "@types/react-dom": "^18.2.25",
@@ -22,7 +23,6 @@
     "framer-motion": "^11.0.28",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "resend": "^3.2.0",
     "swiper": "^11.1.1",
     "tailwind-merge": "^2.2.2",
     "tailwindcss": "^3.4.3",

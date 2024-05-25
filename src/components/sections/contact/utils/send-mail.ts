@@ -1,10 +1,17 @@
-export async function sendMail(data: FormData) {
-  const config = {
-    method: 'POST',
-    body: data,
-  };
+import type { InitialValuesT } from "../form";
+import emailjs from "@emailjs/browser";
 
-  const response = await fetch('/api/mail', config);
-  const result = await response.json();
-  return result;
+export async function sendMail(values: InitialValuesT) {
+  const serviceId = import.meta.env.PUBLIC_SERVICE_ID;
+  const templateId = import.meta.env.PUBLIC_TEMPLATE_ID;
+  const publicKey = import.meta.env.PUBLIC_EMAIL_PUBLIC_KEY
+
+  const result = await emailjs.send(
+    serviceId,
+    templateId,
+    {...values, reply_to : values.email},
+    publicKey
+  )
+
+  return result
 }
