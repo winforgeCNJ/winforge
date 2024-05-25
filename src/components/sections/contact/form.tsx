@@ -49,6 +49,7 @@ export default function Form() {
           ...prevValues,
           isError : true
         }))
+        return
       }
 
       setStatus(prevValues => ({
