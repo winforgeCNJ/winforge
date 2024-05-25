@@ -95,7 +95,7 @@ export default function Form() {
             required
             placeholder="NOMBRE"
             className="border-white border-2 bg-transparent rounded-2xl px-4 w-full py-4 outline-none focus:border-4 focus:border-primary"
-            name="name"
+            name="user_name"
           />
           <input
             type="text"
@@ -103,7 +103,7 @@ export default function Form() {
             onChange={handleChange}
             placeholder="APELLIDO"
             className="border-white border-2 bg-transparent rounded-2xl px-4 w-full py-4 outline-none focus:border-4 focus:border-primary"
-            name="lastName"
+            name="last_name"
           />
         </div>
         <input
@@ -112,7 +112,7 @@ export default function Form() {
           onChange={handleChange}
           placeholder="MAIL"
           className="border-white border-2 bg-transparent rounded-2xl px-4 w-full py-4 outline-none focus:border-4 focus:border-primary"
-          name="mail"
+          name="email"
         />
         <textarea
           placeholder="TU MENSAJE"
