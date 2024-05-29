@@ -10,7 +10,7 @@ interface Props {
 
 const { className } = Astro.props
 ---
-<div class={cn("fixed top-[5.2rem] left-0 hidden transition-all duration-150 bg-black w-full lg:w-auto z-[9999] lg:pt-0 pt-16 lg:block lg:static  nav ", className)}>
+<div class={cn("fixed top-[5.2rem] left-0 hidden transition-all duration-150 bg-black/95 w-full lg:w-auto z-[9999] lg:pt-0 pt-16 lg:block lg:static  nav ", className)}>
     <nav class="flex h-screen  lg:h-auto lg:pt-0   items-center lg:mx-auto lg:bg-transparent flex-col lg:flex-row  z-30 lg:pr-4 gap-4 lg:gap-0">
         {
             navigation.map(nav => (
@@ -24,9 +24,7 @@ const { className } = Astro.props
         
         <Socials className='lg:hidden flex mt-4'/>
         <Glow  className='opacity-[0.3] lg:hidden '/>
-        <div class="absolute top-0 left-0 w-full h-full lg:hidden -z-10 opacity-15 object-cover">
-            <img src="/background-mobile.webp" draggable="false" class="w-full h-full"/>
-        </div>
+       
     </nav>
 </div>
 
