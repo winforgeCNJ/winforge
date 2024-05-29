@@ -13,9 +13,8 @@
 </div>
 
 <script>
-    import { $ } from '@/lib/dom-selector'
     document.addEventListener("DOMContentLoaded", function() {
-        const video = $('#video-player');
+        const video = document.getElementById('video-player') as HTMLVideoElement;
         let isScrolling : any;
         window.addEventListener('scroll', function() {
             video.play();

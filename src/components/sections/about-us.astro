@@ -1,5 +1,4 @@
 ---
-import Background from '@/components/ui/background.astro'
 import Title from '@/components/ui/title.astro';
 import { aspects } from '@/consts/aspects'
 
@@ -14,7 +13,7 @@ import { aspects } from '@/consts/aspects'
     
         <section class="w-full flex items-center flex-col lg:flex-row justify-center gap-2 lg:w-[42.5rem] mx-auto lg:justify-between aspects">
             {
-                aspects.map((aspect, index) => (
+                aspects.map((aspect) => (
                     <div class="flex flex-col  items-center justify-center lg:w-auto w-full aspect-item group">
                         <div class="space-y-6">
                             <img src={aspect.image} alt={`aspect image ${aspect.label}`} width="130" height="130" class="lg:w-[8.125rem] lg:h-[8.125rem] w-28 h-28 group-hover:scale-[0.95] transition-transform"/>

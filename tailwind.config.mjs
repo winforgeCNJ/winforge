@@ -32,7 +32,7 @@ export default {
     },
   },
   plugins: [
-    plugin(function ({ addBase, addComponents, addUtilities }) {
+    plugin(function ({ addBase, addComponents }) {
       addBase({});
       addComponents({
         '.container': {
