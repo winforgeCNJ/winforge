@@ -28,10 +28,15 @@ const { title } = Astro.props;
 
 
 <style is:global>
+	@font-face {
+  font-family: "Myriad";
+  src: url("../../public/assets/fonts/MyriadArabic-Regular.otf") format("opentype");
+}
 
 	:root {
 		--font-inter: "Inter", sans-serif;
-		--font-poppins :"Poppins", sans-serif;
+		--font-poppins: "Poppins", sans-serif;
+		--font-myriad: "Myriad", sans-serif;
 		--primary-glow: conic-gradient(
 		from 180deg at 50% 50%,
 		#07c7d2 0deg,

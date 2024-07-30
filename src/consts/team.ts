@@ -1,5 +1,11 @@
 export const team = [
   {
+    id: 0,
+    name: 'Ciro Luján',
+    rol: 'CFO',
+    image: '/assets/team/Ciro.avif',
+  },
+  {
     id: 1,
     name: 'Jeremías Carrio',
     rol: 'CEO',
@@ -7,30 +13,24 @@ export const team = [
   },
   {
     id: 2,
-    name: 'Ciro Luján',
-    rol: 'CFO',
-    image: '/assets/team/ciro.webp',
-  },
-  {
-    id: 3,
     name: 'Naim Chaya',
     rol: 'Founder',
     image: '/assets/team/naim.webp',
   },
   {
-    id: 4,
+    id: 3,
     name: 'Francisca Sagristá',
     rol: 'Diseñadora Gráfica',
     image: '/assets/team/francisca.webp',
   },
   {
-    id: 5,
+    id: 4,
     name: 'Karim Chaya',
     rol: 'Editor de Videos',
-    image: 'https://avatar.iran.liara.run/public/37',
+    image: '/assets/team/Karim.avif',
   },
   {
-    id: 6,
+    id: 5,
     name: 'Sofía Matich',
     rol: 'Community Mannager',
     image: '/assets/team/sofi.webp',

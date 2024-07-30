@@ -1,0 +1,128 @@
+---
+import IconArrowX from "@/components/icons/icon-arrow-x.astro";
+import TeamCard from "./team-card.astro";
+import { team } from "@/consts/team";
+
+
+---
+
+<section class="relative w-full max-lg:hidden flex items-center justify-center h-[400px] ">
+
+  
+  <swiper-container 
+   navigation="true" 
+   navigation-next-el=".custom-next-button-mega"
+   navigation-prev-el=".custom-prev-button-mega"
+   class="swiper-2 w-[50rem] mx-auto lg:mx-0 items-center justify-center"
+   >
+      {team.map((card) => (
+      <swiper-slide class="flex items-center justify-center min-h-[30rem]">
+        <TeamCard card={card} />
+      </swiper-slide>
+    ))}
+  
+  
+  </swiper-container>
+
+    <button class="custom-prev-button-mega absolute top-1/2 -translate-y-1/2 left-4 lg:-left-8 transition-colors "><IconArrowX /></button>
+    <button class="custom-next-button-mega absolute top-1/2 -translate-y-1/2 right-4 lg:-right-8 transition-colors "><IconArrowX right/></button>
+</section>
+
+<style>
+
+ 
+	.custom-prev-button-mega, .custom-next-button-mega {
+		background-color: white;
+		border-radius: 99999px;
+		padding: 0.04rem;
+		border: solid 4px black;
+    z-index: 1;
+	}
+
+  .custom-prev-button-mega:hover, .custom-next-button-mega:hover {
+		@apply bg-primary
+		
+	}
+
+  @media (min-width: 1024px) {
+
+    .custom-prev-button-mega, .custom-next-button-mega {
+		padding: 0.4rem;
+    border: solid 6px black;
+	}
+  }
+
+
+</style>
+
+<script>
+  import { team } from "@/consts/team";
+  import { register } from 'swiper/element/bundle';
+  register();
+  const swiperEl = document.querySelector('swiper-container');
+
+  // swiper parameters
+
+ 
+  let count = 1 as number;
+
+  let centeredCard = document.getElementById(count.toString()) as HTMLElement | null;
+    centeredCard?.classList.add('scale-[1.20]')
+    centeredCard?.classList.add('hover:scale-[1.23]')
+
+  const handlePrevClick = () => {
+    centeredCard?.classList.remove('scale-[1.20]')
+    centeredCard?.classList.remove('hover:scale-[1.23]')
+
+    count--;
+    if (count < 0) {
+      count = 5;
+    } 
+    centeredCard = document.getElementById(count.toString())
+    centeredCard?.classList.add('scale-[1.20]')
+    centeredCard?.classList.add('hover:scale-[1.23]')
+  }
+
+  const handleNextClick = () => {
+    centeredCard?.classList.remove('scale-[1.20]')
+    centeredCard?.classList.remove('hover:scale-[1.23]')
+    debugger;
+    count++;
+    if (count === team.length) {
+      count = 0;
+    }
+    centeredCard = document.getElementById(count.toString())
+    centeredCard?.classList.add('scale-[1.20]')
+    centeredCard?.classList.add('hover:scale-[1.23]')
+  }
+  
+  
+  const prevButtonMega = document.querySelector('.custom-prev-button-mega') as HTMLElement;
+  const nextButtonMega = document.querySelector('.custom-next-button-mega') as HTMLElement;
+  
+  prevButtonMega.addEventListener('click', handlePrevClick);
+  nextButtonMega?.addEventListener('click', handleNextClick);
+
+  
+
+const swiperParams  = {
+    slidesPerView: "3",
+    loop : true,
+    spaceBetween : 0,
+    simulateTouch : false,
+    slideActiveClass: "",
+    slideToClickedSlide : true,
+    slidePrevTransitionEnd : {handlePrevClick},
+    on: {
+      init() {
+        // ...
+      },
+    },
+  };
+
+    // now we need to assign all parameters to Swiper element
+    Object.assign(swiperEl!, swiperParams);
+
+// and now initialize it
+    swiperEl!.initialize();
+</script>

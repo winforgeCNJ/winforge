@@ -15,16 +15,16 @@ import { team } from "@/consts/team";
    class="swiper-2 w-56 mx-auto lg:mx-0  "
    >
       {team.map(card => (
-      <swiper-slide>
-        <TeamCard card={card}/>
-      </swiper-slide>
+        <swiper-slide>
+          <TeamCard card={card} />
+        </swiper-slide>
     ))}
   
   
   </swiper-container>
 
-    <div class="custom-prev-button absolute top-1/2 -translate-y-1/2 left-4 lg:-left-8 transition-colors "><IconArrowX /></div>
-    <div class="custom-next-button absolute top-1/2 -translate-y-1/2 right-4 lg:-right-8 transition-colors "><IconArrowX right/></div>
+    <button id="team-button" class="custom-prev-button absolute top-1/2 -translate-y-1/2 left-4 lg:-left-8 transition-colors "><IconArrowX /></button>
+    <button id="team-button" class="custom-next-button absolute top-1/2 -translate-y-1/2 right-4 lg:-right-8 transition-colors "><IconArrowX right/></button>
 </section>
 
 <style>
@@ -48,7 +48,7 @@ import { team } from "@/consts/team";
     .custom-prev-button, .custom-next-button {
 		padding: 0.4rem;
     border: solid 6px black;
-	}
+    }
   }
 
 

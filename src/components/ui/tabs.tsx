@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { cn } from '@/lib/cn';
 
 type Tab = {
-  title: string | React.ReactNode | any;
+  // title: string | React.ReactNode | any;
   value: string;
   content?: string | React.ReactNode | any;
 };
