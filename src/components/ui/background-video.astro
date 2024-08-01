@@ -1,29 +1,29 @@
 <div class="fixed left-0 top-0 -z-10 aspect-video h-[100vh] w-screen">
-    <video
-        id="video-player"
-        muted
-        loop
-        class="aspect-video size-full overflow-hidden object-cover opacity-0 transition-opacity duration-500"
-        oncanplay="this.classList.add('opacity-70')"
-        playsinline
-        src='/assets/video/background-video.mp4'
-    >
-        <source type="video/mp4" src='/assets/video/background-video.mp4' />
-    </video>
+  <video
+    id="video-player"
+    muted
+    loop
+    class="aspect-video size-full overflow-hidden object-cover opacity-0 transition-opacity duration-500"
+    oncanplay="this.classList.add('opacity-70')"
+    playsinline
+    src="/assets/video/background-video.mp4"
+  >
+    <source type="video/mp4" src="/assets/video/background-video.mp4" />
+  </video>
 </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const video = document.getElementById('video-player') as HTMLVideoElement;
-        let isScrolling : any;
-        window.addEventListener('scroll', function() {
-            video.play();
+  document.addEventListener("DOMContentLoaded", function () {
+    const video = document.getElementById("video-player") as HTMLVideoElement;
+    let isScrolling: any;
+    window.addEventListener("scroll", function () {
+      video.play();
 
-            window.clearTimeout(isScrolling);
+      window.clearTimeout(isScrolling);
 
-            isScrolling = setTimeout(function() {
-                video.pause();
-            }, 150); 
-        });
+      isScrolling = setTimeout(function () {
+        video.pause();
+      }, 150);
     });
+  });
 </script>

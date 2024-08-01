@@ -2,71 +2,72 @@
 import IconArrowX from "@/components/icons/icon-arrow-x.astro";
 import TeamCard from "./team-card.astro";
 import { team } from "@/consts/team";
-
 ---
 
-<section class="relative w-full lg:hidden block ">
-
-  
-  <swiper-container 
-   navigation="true" 
-   navigation-next-el=".custom-next-button"
-   navigation-prev-el=".custom-prev-button"
-   class="swiper-2 w-56 mx-auto lg:mx-0  "
-   >
-      {team.map(card => (
-        <swiper-slide>
+<section class="relative block w-full lg:hidden">
+  <swiper-container
+    navigation="true"
+    navigation-next-el=".custom-next-button"
+    navigation-prev-el=".custom-prev-button"
+    loop="true"
+    class="swiper-2 mx-auto w-64 lg:mx-0"
+  >
+    {
+      team.map((card) => (
+        <swiper-slide class="flex min-h-[30rem] items-center justify-center transition-all duration-500">
           <TeamCard card={card} />
         </swiper-slide>
-    ))}
-  
-  
+      ))
+    }
   </swiper-container>
 
-    <button id="team-button" class="custom-prev-button absolute top-1/2 -translate-y-1/2 left-4 lg:-left-8 transition-colors "><IconArrowX /></button>
-    <button id="team-button" class="custom-next-button absolute top-1/2 -translate-y-1/2 right-4 lg:-right-8 transition-colors "><IconArrowX right/></button>
+  <button
+    id="team-button"
+    class="custom-prev-button absolute left-4 top-1/2 -translate-y-1/2 transition-colors lg:-left-8"
+    ><IconArrowX /></button
+  >
+  <button
+    id="team-button"
+    class="custom-next-button absolute right-4 top-1/2 -translate-y-1/2 transition-colors lg:-right-8"
+    ><IconArrowX right /></button
+  >
 </section>
 
 <style>
-
- 
-	.custom-prev-button, .custom-next-button {
-		background-color: white;
-		border-radius: 99999px;
-		padding: 0.04rem;
-		border: solid 4px black;
+  .custom-prev-button,
+  .custom-next-button {
+    background-color: white;
+    border-radius: 99999px;
+    padding: 0.04rem;
+    border: solid 4px black;
     z-index: 1;
-	}
-
-  .custom-prev-button:hover, .custom-next-button:hover {
-		@apply bg-primary
-		
-	}
-
-  @media (min-width: 1024px) {
-
-    .custom-prev-button, .custom-next-button {
-		padding: 0.4rem;
-    border: solid 6px black;
-    }
   }
 
+  .custom-prev-button:hover,
+  .custom-next-button:hover {
+    @apply bg-primary;
+  }
 
+  @media (min-width: 1024px) {
+    .custom-prev-button,
+    .custom-next-button {
+      padding: 0.4rem;
+      border: solid 6px black;
+    }
+  }
 </style>
 
 <script>
-
-  import { register } from 'swiper/element/bundle';
+  import { register } from "swiper/element/bundle";
   register();
-  const swiperEl = document.querySelector('swiper-container');
+  const swiperEl = document.querySelector("swiper-container");
 
   // swiper parameters
-  const swiperParams  = {
+  const swiperParams = {
     slidesPerView: "auto",
-    loop : true,
-    spaceBetween : 10,
+    spaceBetween: 10,
     breakpoints: {
-      640 : {
+      640: {
         slidesPerView: 1,
       },
     },
@@ -76,8 +77,6 @@ import { team } from "@/consts/team";
       },
     },
   };
-
-
 
   // now we need to assign all parameters to Swiper element
   Object.assign(swiperEl!, swiperParams);

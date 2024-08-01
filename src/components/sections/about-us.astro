@@ -1,32 +1,47 @@
 ---
-import Title from '@/components/ui/title.astro';
-import { aspects } from '@/consts/aspects'
-import keplerImg from '../../../public/assets/images/kepler.png'
-
+import Title from "@/components/ui/title.astro";
+import { aspects } from "@/consts/aspects";
 ---
 
 <section id="about-us" class="relative overflow-hidden">
-    <div class="container relative min-h-screen flex pb-44 lg:pb-0 flex-col mt-[4rem] -mb-[4rem] items-start justify-center overflow-hidden">
-        <div class="mb-8 lg:mb-0">
-            <Title title='Somos' active='Winforge'/>
-            <p class="body-1 text-white w-[17.5rem] leading-5 mt-3">La forja es un lugar que señala tres aspectos centrales de todo proyecto:</p>
-        </div>
-        <section class="flex flex-row">
-            <div class="flex-col lg:min-w-[32rem] ">
-                <img src='../../../public/assets/images/kepler.png' class="-ml-[56px] lg:w-[40rem]"/>
-                <p class="text-gray-100/90 text-[24px] font-thin bg-black/80 leading-6 text-wrap max-w-[80%] ml-1 font-myriad">
-                   La cámara oscura, por <strong class="font-semibold">Johannes Kepler</strong> en 1604. Servirá para desarrollar el telescopio y luego la cámara de fotos.
-                </p>
-            </div>
-            <div class="flex flex-col justify-center">
-                <p class="text-gray-200 md:items-center font-thin leading-6 text-lg -mt-8 mb-7 max-w-[34rem] bg-black/60">
-                    Crear los procesos que permitan <strong class="font-semibold">comunicar</strong> nuevas empresas e <strong class="font-semibold">impulsar</strong> las existentes. Nos enfocamos en la imagen, el mensaje y las plataformas digitales.    
-                </p>
-                <p class="text-secondary font-medium md:items-center leading-6 text-lg">Forjar una propuesta clara, inspiradora e impactante.</p>
-            </div>
-        </section>
+  <div
+    class="container relative -mb-[4rem] mt-[4rem] flex min-h-screen flex-col items-start justify-center overflow-hidden pb-44 lg:pb-0"
+  >
+    <div class="mb-8 lg:mb-0">
+      <Title title="Somos" active="Winforge" className="" />
+      <p class="body-1 mt-3 w-[17.5rem] leading-5 text-white">
+        La forja es un lugar que señala tres aspectos centrales de todo
+        proyecto:
+      </p>
+    </div>
+    <section class="flex flex-row">
+      <div class="-ml-[56px] flex-col md:min-w-[30rem]">
+        <img src="/assets/images/kepler.png" class="md:w-[44rem]" />
+        <p
+          class="ml-[56px] max-w-[80%] text-wrap bg-black/80 font-myriad text-[24px] font-thin leading-6 text-gray-100/90"
+        >
+          La cámara oscura, por <strong class="font-semibold"
+            >Johannes Kepler</strong
+          > en 1604. Servirá para desarrollar el telescopio y luego la cámara de
+          fotos.
+        </p>
+      </div>
+      <div class="flex flex-col justify-center">
+        <p
+          class="-mt-16 mb-7 max-w-[34rem] bg-black/60 text-lg font-thin leading-6 text-gray-200 md:min-w-[13rem] md:items-center lg:-mt-12"
+        >
+          Crear los procesos que permitan <strong class="font-semibold"
+            >comunicar</strong
+          > nuevas empresas e <strong class="font-semibold">impulsar</strong> las
+          existentes. Nos enfocamos en la imagen, el mensaje y las plataformas digitales.
+        </p>
+        <p class="text-lg font-medium leading-6 text-secondary md:items-center">
+          Forjar una propuesta clara, inspiradora e impactante.
+        </p>
+      </div>
+    </section>
 
-        <!-- <section class="w-full flex items-center flex-col lg:flex-row justify-center gap-2 lg:w-[42.5rem] mx-auto lg:justify-between aspects">
+    <!-- <section class="w-full flex items-center flex-col lg:flex-row justify-center gap-2 lg:w-[42.5rem] mx-auto lg:justify-between aspects">
             {
                 aspects.map((aspect) => (
                     <div class="flex flex-col  items-center justify-center lg:w-auto w-full aspect-item group">
@@ -38,46 +53,41 @@ import keplerImg from '../../../public/assets/images/kepler.png'
                 ))
             }
         </section> -->
-    
-            <!-- <hr class="lg:w-56 w-48 rounded-full h-[2px] bg-white mx-auto mt-8 "/> -->
-    
-            
-    </div>
 
-        
+    <!-- <hr class="lg:w-56 w-48 rounded-full h-[2px] bg-white mx-auto mt-8 "/> -->
+  </div>
 </section>
 
 <style>
-     /* Estilos para el primer hijo */
-     .aspects .aspect-item:nth-child(1) {
-        align-items: start;
+  /* Estilos para el primer hijo */
+  .aspects .aspect-item:nth-child(1) {
+    align-items: start;
+  }
+
+  /* Estilos para el segundo hijo */
+  .aspects .aspect-item:nth-child(2) {
+    align-items: center;
+  }
+
+  /* Estilos para el tercer hijo y posteriores */
+  .aspects .aspect-item:nth-child(n + 3) {
+    align-items: flex-end;
+  }
+
+  @media (min-width: 768px) {
+    /* Estilos para el primer hijo */
+    .aspects .aspect-item:nth-child(1) {
+      align-items: center;
     }
 
     /* Estilos para el segundo hijo */
     .aspects .aspect-item:nth-child(2) {
-        align-items: center;
+      align-items: center;
     }
 
     /* Estilos para el tercer hijo y posteriores */
     .aspects .aspect-item:nth-child(n + 3) {
-        align-items: flex-end;
+      align-items: center;
     }
-
-
-    @media (min-width: 768px) {
-     /* Estilos para el primer hijo */
-     .aspects .aspect-item:nth-child(1) {
-        align-items: center;
-    }
-
-    /* Estilos para el segundo hijo */
-    .aspects .aspect-item:nth-child(2) {
-        align-items: center;
-    }
-
-    /* Estilos para el tercer hijo y posteriores */
-    .aspects .aspect-item:nth-child(n + 3) {
-        align-items: center;
-    }
-}
+  }
 </style>

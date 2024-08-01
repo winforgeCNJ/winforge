@@ -8,9 +8,9 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ service }: ServiceCardProps) {
   return (
-    <article className="mx-auto w-auto lg:w-[36rem]  h-[26rem] lg:h-[28rem] bg-gradient-to-r from-primary via-[#07c7d2] to-[#054494]  text-white  rounded-2xl relative overflow-hidden p-1 ]">
-      <div className="flex flex-col lg:px-8 px-4 py-8 lg:py-12 items-start justify-between w-full h-full bg-black rounded-2xl ">
-        <h3 className="font-bold text-lg uppercase">{service.title}</h3>
+    <article className="] relative mx-auto h-[26rem] w-auto overflow-hidden rounded-2xl bg-gradient-to-r from-primary via-[#07c7d2] to-[#054494] p-1 text-white lg:h-[28rem] lg:w-[36rem]">
+      <div className="flex h-full w-full flex-col items-start justify-between rounded-2xl bg-black px-4 py-8 lg:px-8 lg:py-12">
+        <h3 className="text-lg font-bold uppercase">{service.title}</h3>
 
         <div>
           <h4 className="font-semibold">Manual de marca:</h4>
@@ -25,7 +25,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
           <p>Misión, Visión, Valores, Voz y Tono.</p>
         </div>
 
-        <footer className="w-full flex items-center justify-between">
+        <footer className="flex w-full items-center justify-between">
           <p>Página web.</p>
           <p>Eventos.</p>
           <p>Diseño editorial.</p>

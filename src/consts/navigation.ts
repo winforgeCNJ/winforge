@@ -1,28 +1,33 @@
 export const navigation = [
   {
     id: 1,
-    title: 'Inicio',
-    href: '#hero',
+    title: "Inicio",
+    href: "#hero",
   },
   {
     id: 2,
-    title: 'Nosotros',
-    href: '#about-us',
+    title: "Nosotros",
+    href: "#about-us",
   },
   {
     id: 3,
-    title: 'Soluciones',
-    href: '#services',
+    title: "Soluciones",
+    href: "#services",
   },
   {
     id: 4,
-    title: 'Equipo',
-    href: '#team',
+    title: "Equipo",
+    href: "#team",
   },
   {
     id: 5,
-    title: 'Contactanos',
-    href: '#contact',
+    title: "Casos de Éxito",
+    href: "#clients",
+  },
+  {
+    id: 6,
+    title: "Contactanos",
+    href: "#contact",
     borderStyle: true,
   },
 ];

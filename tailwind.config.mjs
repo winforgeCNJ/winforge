@@ -6,6 +6,9 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      screens: {
+        'min-1130': '1130px', // Custom breakpoint at 1080px
+      },
       colors: {
         primary: "#526762",
         secondary: "#92ddcb",
@@ -21,7 +24,7 @@ export default {
       fontFamily: {
         inter: ["var(--font-inter)", ...fontFamily.sans],
         poppins: ["var(--font-poppins)", ...fontFamily.sans],
-        myriad: ["var(--font-myriad)", ...fontFamily.sans]
+        myriad: ["var(--font-myriad)", ...fontFamily.sans],
       },
 
       transitionDuration: {
@@ -37,15 +40,15 @@ export default {
       addBase({});
       addComponents({
         ".container": {
-          "@apply max-w-[77.5rem] pt-4 mx-auto px-5 md:px-10 lg:px-20 xl:max-w-[87.5rem]":
+          "@apply max-w-[77.5rem] mx-auto px-10 sm:px-16 md:px-20 xl:px-24 xl:max-w-[87.5rem]":
             {},
         },
         ".h1": {
-          "@apply font-inter font-medium text-[2.2rem] leading-[2.8rem]  md:leading-[3.75rem] lg:leading-[3.75rem] lg:text-[2.8rem]  xl:text-[3.2rem] xl:leading-[3.75rem] 2xl:text-[3.5rem]":
+          "@apply font-inter font-medium text-[2.2rem] leading-[2.8rem]  md:leading-[3.75rem] lg:leading-[3.75rem] md:text-[2.8rem]  xl:text-[3.2rem] xl:leading-[3.75rem] 2xl:text-[3.5rem]":
             {},
         },
         ".h2": {
-          "@apply font-medium text-[1.6rem] leading-[1.8rem] md:text-[1.75rem] md:leading-[1.75rem] lg:leading-[1.8rem] xl:text-[2rem] xl:leading-[2.2rem]":
+          "@apply font-medium text-[2rem] leading-[2.2rem] xl:text-[2rem] xl:leading-[2.2rem]":
             {},
         },
         ".h3": {

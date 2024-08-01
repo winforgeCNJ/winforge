@@ -1,10 +1,10 @@
 ---
-import SEO from '@/components/SEO.astro';
-import BackgroundVideo from '@/components/ui/background-video.astro';
-import ButtonUp from '@/components/widgets/button-up.astro';
+import SEO from "@/components/SEO.astro";
+import BackgroundVideo from "@/components/ui/background-video.astro";
+import ButtonUp from "@/components/widgets/button-up.astro";
 
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -12,72 +12,67 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<SEO />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<BackgroundVideo />
-		<slot />
-		
-	  	<ButtonUp />
-	</body>
+  <head>
+    <SEO />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <BackgroundVideo />
+    <slot />
 
+    <ButtonUp />
+  </body>
 </html>
 
-
 <style is:global>
-	@font-face {
-  font-family: "Myriad";
-  src: url("../../public/assets/fonts/MyriadArabic-Regular.otf") format("opentype");
-}
+  @font-face {
+    font-family: "Myriad";
+    src: url("../../assets/fonts/MyriadArabic-Regular.otf") format("opentype");
+  }
 
-	:root {
-		--font-inter: "Inter", sans-serif;
-		--font-poppins: "Poppins", sans-serif;
-		--font-myriad: "Myriad", sans-serif;
-		--primary-glow: conic-gradient(
-		from 180deg at 50% 50%,
-		#07c7d2 0deg,
-		#07c7d2 55deg,
-		#054494 120deg,
-		#012d63 160deg,
-		transparent 360deg
-  		);
-	}
+  :root {
+    --font-inter: "Inter", sans-serif;
+    --font-poppins: "Poppins", sans-serif;
+    --font-myriad: "Myriad", sans-serif;
+    --primary-glow: conic-gradient(
+      from 180deg at 50% 50%,
+      #07c7d2 0deg,
+      #07c7d2 55deg,
+      #054494 120deg,
+      #012d63 160deg,
+      transparent 360deg
+    );
+  }
 
-	body {
-		@apply bg-black overflow-x-hidden font-poppins 
-	}
+  body {
+    @apply overflow-x-hidden bg-black font-poppins;
+  }
 
-	* {
-	scroll-behavior: smooth;
-	}
+  * {
+    scroll-behavior: smooth;
+  }
 
-	.no-visible-scrollbar {
-		scrollbar-width: none;
-		-ms-overflow-style: none;
-		-webkit-overflow-scrolling: touch;
-	}
+  .no-visible-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+  }
 
-	.no-visible-scrollbar::-webkit-scrollbar {
-		display: none;
-	}
+  .no-visible-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 
-	.spin-animate {
-  		animation: spin 2s linear infinite; 
-}
+  .spin-animate {
+    animation: spin 2s linear infinite;
+  }
 
-		@keyframes spin {
-		from {
-			transform: rotate(0deg);
-		}
-		to {
-			transform: rotate(360deg);
-		}
-		}
-
-
-	
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 </style>

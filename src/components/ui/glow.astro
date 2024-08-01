@@ -1,39 +1,41 @@
 ---
-import { cn } from '@/lib/cn';
+import { cn } from "@/lib/cn";
 interface Props {
-    className? : string
+  className?: string;
 }
 
-const { className } = Astro.props
-
+const { className } = Astro.props;
 ---
 
-<div class={cn("glow-2  opacity-[0.4] before:bottom-[52%] before:right-[46%] pointer-events-none", className)}></div>
-
+<div
+  class={cn(
+    "glow-2  opacity-[0.4] before:bottom-[52%] before:right-[46%] pointer-events-none",
+    className,
+  )}
+>
+</div>
 
 <style>
-    
-.glow-2::before {
-  background: var(--secondary-glow);
-  border-radius: 50%;
-  width: 480px;
-  height: 360px;
-  margin-left: -400px;
-}
+  .glow-2::before {
+    background: var(--secondary-glow);
+    border-radius: 50%;
+    width: 480px;
+    height: 360px;
+    margin-left: -400px;
+  }
 
-.glow-2::before {
-  background: var(--primary-glow);
-  width: 240px;
-  height: 180px;
-  z-index: -20;
-}
+  .glow-2::before {
+    background: var(--primary-glow);
+    width: 240px;
+    height: 180px;
+    z-index: -20;
+  }
 
+  .glow-2::before {
+    content: "";
 
-.glow-2::before {
-  content: '';
-
-  position: absolute;
-  filter: blur(10px);
-  transform: translateZ(0);
-}
+    position: absolute;
+    filter: blur(10px);
+    transform: translateZ(0);
+  }
 </style>

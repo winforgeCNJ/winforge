@@ -1,7 +1,6 @@
-
 export default function SuccessForm() {
   return (
-    <section className="lg:min-w-[40rem] space-y-2 flex items-center justify-center w-full flex-col">
+    <section className="flex w-full flex-col items-center justify-center space-y-2 lg:min-w-[40rem]">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="64"
@@ -14,10 +13,10 @@ export default function SuccessForm() {
         />
       </svg>
 
-      <h4 className="text-white text-3xl font-bold text-center">
+      <h4 className="text-center text-3xl font-bold text-white">
         Se envió el correo correctamente.
       </h4>
-      <p className="text-gray-200 text-lg text-center">
+      <p className="text-center text-lg text-gray-200">
         Dentro de poco nuestro equipo se pondra en conctacto con usted.
       </p>
     </section>
