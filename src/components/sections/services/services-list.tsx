@@ -1,10 +1,11 @@
-import { IconBezier } from '@/components/icons/icon-bezier';
-import { IconEarth } from '@/components/icons/icon-earth';
-import { IconFilm } from '@/components/icons/icon-film';
-import { IconWeb } from '@/components/icons/icon-web';
+import React, { useRef, useState } from 'react'; 
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
 import { Tabs } from '@/components/ui/tabs';
 import ServiceCard from './service-card';
-import React from 'react';
+
 
 const Title = ({ title, icon }: { title: string; icon: React.ReactNode }) => (
   <div className="flex items-center gap-x-2 whitespace-nowrap">
@@ -44,8 +45,10 @@ const tabs = [
 
 export function TabsDemo() {
   return (
-    <div className="mb-[36rem] lg:mb-0  h-full px-0 lg:px-20 2xl:px-28 [perspective:1000px] relative flex flex-col lg:flex-row mx-auto w-full  ">
-      <Tabs tabs={tabs} />
-    </div>
+    <Swiper navigation={true} modules={[Navigation]} className="h-full w-full absolute">
+      <SwiperSlide className="mb-[36rem] px-0 lg:px-20 2xl:px-28 relative flex flex-col mx-auto">
+        <Tabs tabs={tabs} />
+      </SwiperSlide>
+    </Swiper>
   );
 }
