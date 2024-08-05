@@ -1,15 +1,16 @@
 ---
 import Glow from "@/components/ui/glow.astro";
 import Title from "@/components/ui/title.astro";
-import { TabsDemo } from "./services-list";
+import ServiceLis from "./service-list.astro";
+import ServiceList from "./ServicesList";
 ---
 
 <section id="services" class="relative overflow-hidden">
   <div
-    class="container -mt-[5rem] flex min-h-screen flex-col items-start justify-center gap-y-8 overflow-hidden pb-44 lg:pb-0"
+    class="container flex min-h-[90vh] flex-col items-start justify-start overflow-hidden lg:mt-14 min-1130:mt-24 xl:mt-36"
   >
-    <Title title="Cuatro" active="Servicios" />
-    <TabsDemo client:visible />
+    <Title title="Cuatro" active="Servicios" className="" />
+    <ServiceList client:visible />
   </div>
   <Glow
     className="before:-right-12 before:bottom-28 before:opacity-[0.4] lg:before:bottom-96 lg:before:opacity-[0.6]"

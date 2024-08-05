@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       screens: {
-        'min-1130': '1130px', // Custom breakpoint at 1080px
+        "min-1130": "1130px", // Custom breakpoint at 1130px
       },
       colors: {
         primary: "#526762",
@@ -40,15 +40,15 @@ export default {
       addBase({});
       addComponents({
         ".container": {
-          "@apply max-w-[77.5rem] mx-auto px-10 sm:px-16 md:px-20 xl:px-24 xl:max-w-[87.5rem]":
+          "@apply max-w-[77.5rem] mx-auto px-8 sm:px-16 md:px-20 xl:px-24 xl:max-w-[87.5rem]":
             {},
         },
         ".h1": {
-          "@apply font-inter font-medium text-[2.2rem] leading-[2.8rem]  md:leading-[3.75rem] lg:leading-[3.75rem] md:text-[2.8rem]  xl:text-[3.2rem] xl:leading-[3.75rem] 2xl:text-[3.5rem]":
+          "@apply font-inter font-medium text-[2rem] leading-[2.3rem] sm:text-[2.2rem] sm:leading-[2.8rem]  md:leading-[3.75rem] lg:leading-[3.75rem] md:text-[2.8rem]  xl:text-[3.2rem] xl:leading-[3.75rem] 2xl:text-[3.5rem]":
             {},
         },
         ".h2": {
-          "@apply font-medium text-[2rem] leading-[2.2rem] xl:text-[2rem] xl:leading-[2.2rem]":
+          "@apply font-medium text-[1.4rem] leading-[1.8rem] sm:text-[1.8rem] sm:leading-[2.2rem] md:text-[1.9rem] xl:text-[2rem] xl:leading-[2.2rem]":
             {},
         },
         ".h3": {

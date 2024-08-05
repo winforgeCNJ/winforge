@@ -23,7 +23,7 @@ const { className } = Astro.props;
     {
       navigation.map((nav) => (
         <a
-          class={`${nav.borderStyle && "t rounded-full border-2 border-white !py-1 transition-all after:hidden hover:bg-white hover:text-dark-1 lg:mx-2"} relative inline-block px-4 py-2 text-xl text-white after:absolute after:bottom-1 after:left-1/2 after:h-0.5 after:w-0 after:rounded-full after:bg-white after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full lg:py-8 lg:text-sm lg:after:bottom-4 xl:px-6 min-1130:text-base`}
+          class={`${nav.borderStyle && "t rounded-full border-2 border-white !py-1 transition-all after:hidden hover:bg-white hover:text-dark-1 lg:mx-2"} relative inline-block px-4 py-2 text-xl text-white after:absolute after:bottom-1 after:left-1/2 after:h-0.5 after:w-0 after:rounded-full after:bg-white after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full lg:py-8 lg:text-sm lg:after:bottom-4 min-1130:text-base xl:px-6`}
           href={nav.href}
         >
           {nav.title}

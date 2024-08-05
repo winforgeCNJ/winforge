@@ -15,10 +15,10 @@ export default function WordRotate({
   words,
   duration = 2500,
   framerProps = {
-    initial: { opacity: 0, y: -15 },
+    initial: { opacity: 0, y: -25 },
     animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: 15 },
-    transition: { duration: 0.25, ease: "easeOut" },
+    exit: { opacity: 0, y: 25 },
+    transition: { duration: 0.5, ease: "easeOut" },
   },
   className,
 }: WordRotateProps) {
@@ -34,7 +34,7 @@ export default function WordRotate({
   }, [words, duration]);
 
   return (
-    <div className="overflow-hidden font-medium pt-1 text-secondary inline-flex">
+    <div className="mb-4 w-[17rem] animate-fade-in-up overflow-hidden text-[16px] font-medium text-secondary animate-delay-[1200ms] animate-duration-500 sm:w-[25rem] sm:text-[20px] md:w-[34rem] md:text-[26px] md:leading-9 lg:text-[28px]">
       <AnimatePresence mode="wait">
         <motion.span
           key={words[index]}

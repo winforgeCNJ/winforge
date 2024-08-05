@@ -1,5 +1,5 @@
 ---
-import IconArrowX from "@/components/icons/icon-arrow-x.astro";
+import IconArrowX from "@/components/icons/icon-arrow-x";
 import TeamCard from "./team-card.astro";
 import { team } from "@/consts/team";
 ---
@@ -8,10 +8,16 @@ import { team } from "@/consts/team";
   class="relative flex h-[450px] w-full items-center justify-center max-lg:hidden"
 >
   <swiper-container
+    key="team-carousel"
     navigation="true"
     navigation-next-el=".custom-next-button-mega"
     navigation-prev-el=".custom-prev-button-mega"
+    slide-active-class="active-slide"
     initial-slide="3"
+    slides-per-view="3"
+    centered-slides="true"
+    space-between= "0"
+    simulate-touch= "false"
     speed="800"
     loop="true"
     class="swiper-2 mx-auto w-[51.5rem] lg:mx-0"
@@ -27,11 +33,11 @@ import { team } from "@/consts/team";
 
   <button
     class="custom-prev-button-mega absolute left-4 top-1/2 -translate-y-1/2 transition-colors lg:-left-8"
-    ><IconArrowX /></button
+    ><IconArrowX right={false} className="" /></button
   >
   <button
     class="custom-next-button-mega absolute right-4 top-1/2 -translate-y-1/2 transition-colors lg:-right-8"
-    ><IconArrowX right /></button
+    ><IconArrowX right className="" /></button
   >
 </section>
 
@@ -50,6 +56,11 @@ import { team } from "@/consts/team";
     @apply bg-primary;
   }
 
+  .active-slide {
+    transform: scale(1.25);
+    z-index: 10;
+  }
+
   @media (min-width: 1024px) {
     .custom-prev-button-mega,
     .custom-next-button-mega {
@@ -60,7 +71,6 @@ import { team } from "@/consts/team";
 </style>
 
 <script>
-  import { team } from "@/consts/team";
   import { register } from "swiper/element/bundle";
   register();
   const swiperEl = document.querySelector("swiper-container");
@@ -68,11 +78,8 @@ import { team } from "@/consts/team";
   // swiper parameters
 
   const swiperParams = {
-    slidesPerView: "3",
-    spaceBetween: 0,
-    slideActiveClass: "scale-[1.25]",
-    simulateTouch: false,
-    centeredSlides: true,
+    initialSlide:"2",
+    slidesPerView:"3",
     on: {
       init() {
         // ...

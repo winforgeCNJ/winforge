@@ -12,33 +12,28 @@ import GraphicFigureLogo from "../widgets/graphic-figure-logo.astro";
       <HeadinPrincipal
         client:load
         words="Forjar el camino en el detalle y los valores"
-        className="h1 mb-5 text-white font-normal max-md:max-w-[30rem] md:max-w-[640px] lg:mb-7 xl:max-w-[740px]"
+        className="h1 mb-5 font-normal text-white max-md:max-w-[30rem] md:max-w-[640px] lg:mb-7 xl:max-w-[45rem] 2xl:max-w-[50rem]"
       />
       <p
-        class="md:mb-5 animate-fade-in-up w-[17rem] sm:w-[25rem] text-[20px] font-thin text-gray-200 animate-delay-[1200ms] animate-duration-500 md:w-[34rem] md:text-[26px] md:leading-9 lg:text-[28px]"
+        class="animate-fade-in-up text-[16px] font-thin text-gray-200 animate-delay-[1200ms] animate-duration-500 max-sm:max-w-[20rem] sm:w-[25rem] sm:text-[20px] md:w-[34rem] md:text-[26px] md:leading-9 lg:text-[28px]"
       >
-        Transformamos tu visión empresarial en una realidad digital con <WordRotate
-          client:load
-          words={[
-            "Diseño y Estrategia",
-            "Desarrollo Web",
-            "Gestión Multimedia",
-            "Producción de Contenido",
-          ]}
-        />
+        Transformamos tu visión empresarial en una realidad digital con
       </p>
-      <!-- <p class="text-gray-200 lg:w-[34rem] text-base lg:text-lg mb-14 animate-duration-500 animate-delay-[1200ms] animate-fade-in-up -mt-20">
-        ¿Preparado para iniciar?   ¡Forjemos una relación de trabajo íntegra y fructífera. Para llevar tu empresa al mundo virtual con estilo y originalidad!
-      </p> -->
-
+      <WordRotate
+        client:load
+        words={[
+          "Diseño y Estrategia",
+          "Desarrollo Web",
+          "Gestión Multimedia",
+          "Producción de Contenido",
+        ]}
+      />
       <div
         class="flex animate-fade-in-up items-center gap-x-4 text-sm animate-delay-[1800ms] animate-duration-500 lg:text-base"
       >
-        <!-- <a href="#contact" class="text-sm lg:text-base inline-block tracking-widesttext-black font-inter px-4 lg:px-6 rounded-full py-2 font-bold bg-gradient-to-r bg-white btn-learn-more hover:bg-transparent border-2 border-transparent hover:border-white transition-all hover:text-white hover:scale-[1.03]">CONTACTANOS</a> -->
-
         <a
           href="#about-us"
-          class="btn-learn-more inline-block rounded-full border-2 border-white px-4 py-2 font-inter text-sm font-bold tracking-widest text-white transition-all hover:scale-[1.03] hover:bg-white hover:text-black lg:px-6 lg:text-base"
+          class="btn-learn-more inline-block rounded-full border-2 border-white px-[14px] py-2 font-inter text-xs font-normal tracking-widest text-white transition-all hover:scale-[1.03] hover:bg-white hover:text-black sm:px-4 sm:text-sm sm:font-bold lg:px-6 lg:text-base"
           >CONOCÉ MÁS</a
         >
       </div>

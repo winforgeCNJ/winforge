@@ -1,34 +1,40 @@
-interface ServiceI {
-  title: string;
+interface ServiceProp {
+  service: {
+    title: string;
+    bold1: string;
+    text1: string;
+    bold2: string;
+    text2: string;
+    footer: string[];
+  };
+  className: string;
 }
 
-interface ServiceCardProps {
-  service: ServiceI;
-}
-
-export default function ServiceCard({ service }: ServiceCardProps) {
+export default function ServiceCard({
+  service: { title, bold1, text1, bold2, text2, footer },
+  className,
+}: ServiceProp) {
   return (
-    <article className="mx-auto w-auto lg:w-[36rem] h-[26rem] lg:h-[28rem] bg-gradient-to-r from-primary via-[#07c7d2] to-[#054494]  text-white  rounded-2xl relative overflow-hidden p-1 ]">
-      <div className="flex flex-col lg:px-8 px-4 py-8 lg:py-12 items-start justify-between w-full h-full bg-black rounded-2xl ">
-        <h3 className="font-bold text-lg uppercase">{service.title}</h3>
+    <article
+      className={`${className} duration-1000 relative h-[24rem] w-[30rem] overflow-hidden rounded-2xl bg-gradient-to-r from-primary via-[#2a3435] to-[#2e2e2ed3] p-1 text-white transition-all`}
+    >
+      <div className="flex h-full w-full flex-col items-start justify-between rounded-2xl bg-black px-4 py-8 lg:px-8 lg:py-12">
+        <h3 className="text-lg font-bold uppercase">{title}</h3>
 
         <div>
-          <h4 className="font-semibold">Manual de marca:</h4>
-          <p>
-            Logo, Isologo, Isotopo, Nombre, Branding, PLateta de colores
-            institucionales, Tipografías
-          </p>
+          <h4 className="font-semibold">{bold1}</h4>
+          <p>{text1}</p>
         </div>
 
         <div>
-          <h4 className="font-semibold">Espíritu de la marca:</h4>
-          <p>Misión, Visión, Valores, Voz y Tono.</p>
+          <h4 className="font-semibold">{bold2}</h4>
+          <p>{text2}</p>
         </div>
 
         <footer className="flex w-full items-center justify-between">
-          <p>Página web.</p>
-          <p>Eventos.</p>
-          <p>Diseño editorial.</p>
+          {footer.map((item) => (
+            <p className="w-full text-justify">{item}</p>
+          ))}
         </footer>
       </div>
     </article>
