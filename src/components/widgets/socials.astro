@@ -1,19 +1,42 @@
 ---
-import IconInstagram from '@/components/icons/icon-instagram.astro'
-import IconLinkedin from '@/components/icons/icon-linkedin.astro'
-import IconWhatsapp from '@/components/icons/icon-whatsapp.astro'
-import { cn } from '@/lib/cn'
+import IconInstagram from "@/components/icons/icon-instagram.astro";
+import IconLinkedin from "@/components/icons/icon-linkedin.astro";
+import IconWhatsapp from "@/components/icons/icon-whatsapp.astro";
+import { cn } from "@/lib/cn";
 
 interface Props {
-    className? : string
+  className?: string;
 }
 
-const { className } = Astro.props
-
+const { className } = Astro.props;
 ---
 
 <ul class={cn("lg:flex items-center gap-1  justify-center hidden ", className)}>
-    <li><a href="https://www.instagram.com/winforge" rel="noreferrer" target="_blank" class=" bg-dark-2 rounded-full h-10 w-10 flex items-center justify-center text-white border-2 border-transparent hover:border-white transition-all"><IconInstagram /></a></li>
-    <li><a href="https://www.linkedin.com/company/winforge" rel="noreferrer" target="_blank" class=" bg-dark-2 rounded-full h-10 w-10 flex items-center justify-center text-white border-2 border-transparent hover:border-white transition-all"><IconLinkedin /></a></li>
-    <li><a href="https://api.whatsapp.com/send?phone=5493416365959" rel="noreferrer" target="_blank" class=" bg-dark-2 rounded-full h-10 w-10 flex items-center justify-center text-white border-2 border-transparent hover:border-white transition-all"><IconWhatsapp /></a></li>
+  <li>
+    <a
+      href="https://www.instagram.com/winforge"
+      rel="noreferrer"
+      target="_blank"
+      class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-transparent bg-dark-2 text-white transition-all hover:border-white"
+      ><IconInstagram /></a
+    >
+  </li>
+  <li>
+    <a
+      href="https://www.linkedin.com/company/winforge"
+      rel="noreferrer"
+      target="_blank"
+      class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-transparent bg-dark-2 text-white transition-all hover:border-white"
+      ><IconLinkedin /></a
+    >
+  </li>
+  <li>
+    <a
+      href="https://api.whatsapp.com/send?phone=5493416365959"
+      rel="noreferrer"
+      target="_blank"
+      class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-transparent bg-dark-2 text-white transition-all hover:border-white"
+      ><IconWhatsapp /></a
+    >
+  </li>
 </ul>

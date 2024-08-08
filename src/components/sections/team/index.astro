@@ -1,35 +1,52 @@
 ---
-import Glow from '@/components/ui/glow.astro';
-import Title from '@/components/ui/title.astro'
-import TeamCarouselMobile from './team-carousel-mobile.astro';
-import TeamCard from './team-card.astro';
-import { team } from '@/consts/team'
+import Glow from "@/components/ui/glow.astro";
+import Title from "@/components/ui/title.astro";
+import TeamCarouselMobile from "./team-carousel-mobile.astro";
+import TeamCarousel from "./team-carousel.astro";
+
+// import TeamCard from './team-card.astro';
+// import { team } from '@/consts/team'
 ---
 
-<section id="team" class=" relative overflow-hidden">
-    <div class="container  min-h-screen flex pb-44 lg:pb-0 flex-col gap-y-4 items-start justify-center overflow-hidden ">
+<section id="team" class="relative overflow-hidden">
+  <div
+    class="container flex min-h-[85vh] flex-col items-start justify-center gap-y-4 overflow-hidden pb-14 "
+  >
+    <div
+      class="mb-12 hidden w-full flex-col justify-between gap-4 md:flex lg:mb-10 lg:flex-row lg:items-center lg:gap-0"
+    >
+      <Title title="Nuestro" active="Equipo" className="lg:ml-10" />
+      <hr class="h-[2px] w-48 rounded-full bg-white lg:mx-4 xl:mx-auto" />
 
-        <div class="w-full flex lg:items-center flex-col lg:flex-row justify-between gap-4 lg:gap-0 lg:mb-20 mb-12">
-            <Title title='Nuestro' active='Equipo'/>
-            <hr class=" w-48 rounded-full h-[2px] bg-white lg:mx-auto "/>
-            
-            <p class="text-gray-200 w-auto lg:w-[42.7rem] mx-auto text-justify lg:text-start lg:text-balance md:items-center leading-6 text-lg">
-                Nuestro equipo está <strong>comprometida</strong> a cumplir con los plazos de entrega y mantener un <strong>alto nivel de calidad</strong> en todo momento. Siempre en busca de nuevos desafíos y oportunidades para mejorar a nuestra habilidades y conocimientos.
-            </p>
-        </div>
-    
-        <section class="hidden lg:flex  items-center justify-center  w-full gap-x-4 pt-12 ">
-            {
-                team.map(card => (
-                    <TeamCard card={card}/>
-                ))
-            }
-        </section>
-        <TeamCarouselMobile />
+      <p
+        class="w-auto text-justify text-lg leading-6 text-gray-200 md:items-center lg:w-[44rem] lg:text-balance lg:text-start"
+      >
+        Nuestro equipo está <strong>comprometido</strong> a cumplir con los plazos
+        de entrega y mantener un <strong>alto nivel de calidad</strong> en todo momento.
+        Siempre en busca de nuevos desafíos y oportunidades para mejorar nuestras
+        habilidades y conocimientos.
+      </p>
     </div>
 
-<Glow className='opacity-[0.4] before:right-[54%] before:bottom-[56%] '/>
+    <div class="flex w-full flex-col justify-between gap-4 px-3 md:hidden">
+      <Title title="Nuestro" active="Equipo" className="" />
+      <p class="w-auto text-lg leading-6 text-gray-200 md:items-center">
+        Siempre en busca de nuevos desafíos y oportunidades para mejorar
+        nuestras habilidades y conocimientos.
+      </p>
+    </div>
 
+    <TeamCarousel />
+    <!-- <ReactTeamCarousel client:only="react"/> -->
+    <!-- <section class="hidden lg:flex items-center justify-center w-full"></section>
+            
+                // team.map(card => (
+                //     <TeamCard card={card}/>
+                // ))
+            
+        </section> -->
+    <TeamCarouselMobile />
+  </div>
 
-
+  <Glow className="opacity-[0.4] before:bottom-[56%] before:right-[54%]" />
 </section>
