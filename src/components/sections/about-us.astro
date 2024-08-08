@@ -1,70 +1,85 @@
 ---
-import Title from '@/components/ui/title.astro';
-import { aspects } from '@/consts/aspects'
-
+import Title from "@/components/ui/title.astro";
+import { aspects } from "@/consts/aspects";
 ---
 
-<section id="about-us" class="relative overflow-hidden">
-    <div class="container relative min-h-screen flex pb-44 lg:pb-0 flex-col gap-y-4 items-start justify-center overflow-hidden">
-        <div class="mb-8 lg:mb-0">
-            <Title title='Somos' active='Winforge'/>
-            <p class="body-1 text-white w-[17.5rem] leading-5">La forja es un lugar que señala tres aspectos centrales de todo proyecto:</p>
-        </div>
-    
-        <section class="w-full flex items-center flex-col lg:flex-row justify-center gap-2 lg:w-[42.5rem] mx-auto lg:justify-between aspects">
-            {
-                aspects.map((aspect) => (
-                    <div class="flex flex-col  items-center justify-center lg:w-auto w-full aspect-item group">
-                        <div class="space-y-6">
-                            <img src={aspect.image} alt={`aspect image ${aspect.label}`} width="130" height="130" class="lg:w-[8.125rem] lg:h-[8.125rem] w-28 h-28 group-hover:scale-[0.95] transition-transform"/>
-                            <p class="font-bold text-white text-center rounded-lg group-hover:bg-white group-hover:text-dark-2 transition-all">{aspect.label}</p>
-                        </div>
-                    </div>
-                ))
-            }
-        </section>
-    
-            <hr class="lg:w-56 w-48 rounded-full h-[2px] bg-white mx-auto mt-8 "/>
-    
-            <p class="text-gray-200 w-auto lg:w-[40.5rem] mx-auto   md:items-center leading-6 text-lg  text-justify">
-                Nuestra habilidad principal es crear los procesos que permitan formar nuevas empresas e impulsar las existentes. Nos enfocamos en la imagen, el mensaje y las plataformas digitales. <strong>Gestar una propuesta clara, insipiradora e impactante.</strong>
-            </p>
+<section id="about-us" class="relative overflow-hidden 2xl:mt-0">
+  <div
+    class="container relative flex mt-4 min-h-[75vh] sm:min-h-[80vh] pb-20 lg:pb-0 lg:mt-36  flex-col items-start justify-start overflow-hidden lg:justify-center"
+  >
+    <div class="mb-4 md:mb-4 lg:mb-0">
+      <Title title="Somos" active="Winforge" className="" />
+      <p
+        class="mt-4 hidden leading-6 text-white md:block md:w-[16.5rem] md:text-[17px] lg:w-[18.5rem] lg:text-[19px]"
+      >
+        La forja es un lugar que señala tres aspectos centrales de todo
+        proyecto:
+      </p>
     </div>
-
-        
+    <section class="flex flex-col-reverse md:flex-row">
+      <div class="flex flex-col items-center md:-ml-[56px] md:min-w-[30rem]">
+        <img
+          src="/assets/images/kepler.png"
+          class="min-w-[15rem] md:w-[44rem]"
+        />
+        <p
+          class="max-w-[80%] text-wrap bg-black/80 font-myriad text-[20.5px] font-thin leading-5 text-gray-100/90 sm:text-[23px] md:leading-6 lg:text-[25px]"
+        >
+          La cámara oscura, por <strong class="italic md:font-semibold"
+            >Johannes Kepler</strong
+          > en 1604. Servirá para desarrollar el telescopio y luego la cámara de
+          fotos.
+        </p>
+      </div>
+      <div class="flex flex-col justify-center">
+        <p
+          class="mb-4 max-w-[34rem] bg-black/60 text-[15px] font-thin leading-6 text-gray-200 sm:text-[15.5px] md:-mt-16 md:mb-7 md:min-w-[13rem] md:items-center lg:-mt-12 lg:text-[20px]"
+        >
+          Crear los procesos que permitan <strong class="font-semibold"
+            >comunicar</strong
+          > nuevas empresas e <strong class="font-semibold">impulsar</strong> las
+          existentes. Nos enfocamos en la imagen, el mensaje y las plataformas digitales.
+        </p>
+        <p
+          class="text-[15.5px] font-medium leading-6 text-secondary md:items-center lg:text-[21px]"
+        >
+          Forjar una propuesta clara, inspiradora e impactante.
+        </p>
+      </div>
+    </section>
+  </div>
 </section>
 
 <style>
-     /* Estilos para el primer hijo */
-     .aspects .aspect-item:nth-child(1) {
-        align-items: start;
+  /* Estilos para el primer hijo */
+  .aspects .aspect-item:nth-child(1) {
+    align-items: start;
+  }
+
+  /* Estilos para el segundo hijo */
+  .aspects .aspect-item:nth-child(2) {
+    align-items: center;
+  }
+
+  /* Estilos para el tercer hijo y posteriores */
+  .aspects .aspect-item:nth-child(n + 3) {
+    align-items: flex-end;
+  }
+
+  @media (min-width: 768px) {
+    /* Estilos para el primer hijo */
+    .aspects .aspect-item:nth-child(1) {
+      align-items: center;
     }
 
     /* Estilos para el segundo hijo */
     .aspects .aspect-item:nth-child(2) {
-        align-items: center;
+      align-items: center;
     }
 
     /* Estilos para el tercer hijo y posteriores */
     .aspects .aspect-item:nth-child(n + 3) {
-        align-items: flex-end;
+      align-items: center;
     }
-
-
-    @media (min-width: 768px) {
-     /* Estilos para el primer hijo */
-     .aspects .aspect-item:nth-child(1) {
-        align-items: center;
-    }
-
-    /* Estilos para el segundo hijo */
-    .aspects .aspect-item:nth-child(2) {
-        align-items: center;
-    }
-
-    /* Estilos para el tercer hijo y posteriores */
-    .aspects .aspect-item:nth-child(n + 3) {
-        align-items: center;
-    }
-}
+  }
 </style>

@@ -9,7 +9,7 @@
  */
 export const $ = (
   selector: string,
-  context: Document | HTMLElement = document
+  context: Document | HTMLElement = document,
 ) => context.querySelector(selector) as HTMLElement;
 
 /**
@@ -22,5 +22,5 @@ export const $ = (
  */
 export const $$ = (
   selector: string,
-  context: Document | HTMLElement = document
+  context: Document | HTMLElement = document,
 ) => context.querySelectorAll(selector);

@@ -1,17 +1,17 @@
 export const aspects = [
   {
     id: 1,
-    label: 'Orden',
-    image: '/assets/aspects-icons/order.webp',
+    label: "Orden",
+    image: "/assets/aspects-icons/order.webp",
   },
   {
     id: 2,
-    label: 'Proceso',
-    image: '/assets/aspects-icons/process.webp',
+    label: "Proceso",
+    image: "/assets/aspects-icons/process.webp",
   },
   {
     id: 3,
-    label: 'Repetición',
-    image: '/assets/aspects-icons/repeat.webp',
+    label: "Repetición",
+    image: "/assets/aspects-icons/repeat.webp",
   },
 ];

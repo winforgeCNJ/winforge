@@ -1,15 +1,15 @@
 ---
 interface Props {
-    title : string
-    active : string
+  title: string;
+  active: string;
+  className: string;
 }
 
-const { active, title } = Astro.props
-
-
+const { active, title, className } = Astro.props;
 ---
 
-<h2 class="h2 z-10 text-white uppercase mb-1">
-    {title} <br/>
-    <span class="font-bold">{active}</span>
+<h2 class={`h2 z-10 text-white uppercase mb-1 ${className}`}>
+  {title}
+  <br />
+  <span class="font-bold">{active}</span>
 </h2>

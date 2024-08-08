@@ -1,57 +1,60 @@
 ---
-import IconMenu from '@/components/icons/icon-menu.astro'
-import Socials from '@/components/widgets/socials.astro'
-import Logo from './logo.astro';
-import Nav from './nav.astro'
-
-
+import IconMenu from "@/components/icons/icon-menu.astro";
+import Socials from "@/components/widgets/socials.astro";
+import Logo from "./logo.astro";
+import Nav from "./nav.astro";
 ---
 
-<header class="bg-black lg:bg-transparent z-[60] pb-3 lg:pb-0">
-    <div class="w-full  flex items-center justify-between container">
-        <Logo />
-    
-        <div class="flex item-scenter">
-                <Nav/>
-        
-                <Socials />
-        
-                <button  id="menuButton" class="block lg:hidden z-[9999] p-4 ">
-                    <IconMenu />
-                </button>
-        </div>
-    </div>
+<header class="z-[60] bg-black/80 pb-1 pt-2 max-lg:pb-3">
+  <div
+    class="mx-auto flex w-full max-w-[77.5rem] items-center justify-between px-8 md:px-[66px] xl:max-w-[87.5rem]"
+  >
+    <Logo />
 
+    <div class="flex items-center">
+      <Nav />
+
+      <Socials />
+
+      <button id="menuButton" class="z-[9999] block p-4 lg:hidden">
+        <IconMenu />
+      </button>
+    </div>
+  </div>
 </header>
 
 <script>
-    import { $ } from "@/lib/dom-selector"
-    const nav = $('.nav')
-        const menuButton = $('button')
-        const menuSvg = $('#menuSvg')
-    function toggleMenu(menuMobileContent: HTMLElement | null) {
-        menuMobileContent?.classList.toggle("block")
-        menuMobileContent?.classList.toggle("hidden")
-        document.body.classList.toggle("overflow-hidden")
-        document.body.classList.toggle("lg:overflow-auto")
+  import { $ } from "@/lib/dom-selector";
+  const nav = $(".nav");
+  const menuButton = $("button");
+  const menuSvg = $("#menuSvg");
+  function toggleMenu(menuMobileContent: HTMLElement | null) {
+    menuMobileContent?.classList.toggle("block");
+    menuMobileContent?.classList.toggle("hidden");
+    document.body.classList.toggle("overflow-hidden");
+    document.body.classList.toggle("lg:overflow-auto");
+  }
+
+  function toggleMenuIcon(
+    menuSvg: HTMLElement | null,
+    openNavigation: boolean,
+  ) {
+    const rect1 = menuSvg?.querySelector("rect:nth-child(1)");
+    const rect2 = menuSvg?.querySelector("rect:nth-child(2)");
+
+    if (rect1 && rect2) {
+      rect1.setAttribute("y", openNavigation ? "5" : "0");
+      rect1.setAttribute("transform", `rotate(${openNavigation ? "45" : "0"})`);
+      rect2.setAttribute("y", openNavigation ? "5" : "10");
+      rect2.setAttribute(
+        "transform",
+        `rotate(${openNavigation ? "-45" : "0"})`,
+      );
     }
-    
-    function toggleMenuIcon(menuSvg: HTMLElement | null, openNavigation: boolean) {
-            const rect1 = menuSvg?.querySelector('rect:nth-child(1)')
-            const rect2 = menuSvg?.querySelector('rect:nth-child(2)')
-            
-            if (rect1 && rect2) {
-                rect1.setAttribute('y', openNavigation ? "5" : "0")
-                rect1.setAttribute('transform', `rotate(${openNavigation ? "45" : "0"})`)
-                rect2.setAttribute('y', openNavigation ? "5" : "10")
-                rect2.setAttribute('transform', `rotate(${openNavigation ? "-45" : "0"})`)
-            }
-        }
-    
-      
-    
-        menuButton?.addEventListener('click', () => {
-                toggleMenu(nav)
-                toggleMenuIcon(menuSvg, !nav.classList.contains('hidden'))
-         })
-    </script>
+  }
+
+  menuButton?.addEventListener("click", () => {
+    toggleMenu(nav);
+    toggleMenuIcon(menuSvg, !nav.classList.contains("hidden"));
+  });
+</script>
