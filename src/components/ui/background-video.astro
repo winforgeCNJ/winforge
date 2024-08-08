@@ -1,4 +1,4 @@
-<div class="fixed left-0 top-0 -z-10 aspect-video h-[100vh] w-screen">
+<div class="fixed left-0 top-0 -z-50 aspect-video h-[100vh] w-screen">
   <video
     id="video-player"
     muted
@@ -18,12 +18,13 @@
     let isScrolling: any;
     window.addEventListener("scroll", function () {
       video.play();
+      video.playbackRate = 6;
 
       window.clearTimeout(isScrolling);
 
       isScrolling = setTimeout(function () {
         video.pause();
-      }, 150);
+      }, 450);
     });
   });
 </script>

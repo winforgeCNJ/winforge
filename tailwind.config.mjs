@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       screens: {
-        "min-1130": "1130px", // Custom breakpoint at 1130px
+        "min-1130": "1130px",
+        "mobile": "450px"
       },
       colors: {
         primary: "#526762",
@@ -44,11 +45,11 @@ export default {
             {},
         },
         ".h1": {
-          "@apply font-inter font-medium text-[2rem] leading-[2.3rem] sm:text-[2.2rem] sm:leading-[2.8rem]  md:leading-[3.75rem] lg:leading-[3.75rem] md:text-[2.8rem]  xl:text-[3.2rem] xl:leading-[3.75rem] 2xl:text-[3.5rem]":
+          "@apply font-inter font-medium text-[2.2rem] leading-[2.8rem] md:leading-[3.75rem] lg:leading-[3.75rem] md:text-[2.8rem]  xl:text-[3.2rem] xl:leading-[3.75rem] 2xl:text-[3.5rem]":
             {},
         },
         ".h2": {
-          "@apply font-medium text-[1.4rem] leading-[1.8rem] sm:text-[1.8rem] sm:leading-[2.2rem] md:text-[1.9rem] xl:text-[2rem] xl:leading-[2.2rem]":
+          "@apply font-medium text-[1.6rem] leading-[1.8rem] sm:text-[1.8rem] sm:leading-[2.2rem] md:text-[1.9rem] xl:text-[2rem] xl:leading-[2.2rem]":
             {},
         },
         ".h3": {

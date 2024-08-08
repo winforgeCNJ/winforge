@@ -1,5 +1,10 @@
 interface ServiceI {
   title: string;
+  bold1: string;
+  text1: string;
+  bold2: string;
+  text2: string;
+  footer: string[] | undefined;
 }
 
 interface ServiceCardProps {
@@ -7,28 +12,24 @@ interface ServiceCardProps {
 }
 
 export default function ServiceCard({ service }: ServiceCardProps) {
+  const { title, bold1, text1, bold2, text2, footer } = service;
   return (
-    <article className=" relative mx-auto h-[26rem] w-auto overflow-hidden rounded-2xl bg-gradient-to-r from-primary via-[#07c7d2] to-[#054494] p-1 text-white lg:h-[28rem] lg:w-[36rem]">
-      <div className="flex h-full w-full flex-col items-start justify-between rounded-2xl bg-black px-4 py-8 lg:px-8 lg:py-12">
-        <h3 className="text-lg font-bold uppercase">{service.title}</h3>
+    <article className="relative mx-auto h-[24rem] mobile:h-[26rem] w-auto overflow-hidden rounded-2xl bg-gradient-to-r from-primary via-[#07c7d2] to-[#054494] p-1 text-white lg:h-[28rem] lg:w-[36rem]">
+      <div className="flex h-full w-full flex-col items-start justify-around rounded-2xl bg-black px-4 py-8 sm:justify-between lg:px-8 lg:py-12 [&>div>p]:font-extralight">
+        <h3 className="text-lg font-bold uppercase">{title}</h3>
 
         <div>
-          <h4 className="font-semibold">Manual de marca:</h4>
-          <p>
-            Logo, Isologo, Isotopo, Nombre, Branding, PLateta de colores
-            institucionales, Tipografías
-          </p>
+          <h4 className="font-semibold">{bold1}:</h4>
+          <p>{text1}</p>
         </div>
 
         <div>
-          <h4 className="font-semibold">Espíritu de la marca:</h4>
-          <p>Misión, Visión, Valores, Voz y Tono.</p>
+          <h4 className="font-semibold">{bold2}</h4>
+          <p>{text2}</p>
         </div>
 
-        <footer className="flex w-full items-center justify-between">
-          <p>Página web.</p>
-          <p>Eventos.</p>
-          <p>Diseño editorial.</p>
+        <footer className="hidden w-full items-center justify-between sm:flex">
+          {footer?.map((item) => <p>{item}</p>)}
         </footer>
       </div>
     </article>

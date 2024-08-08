@@ -1,5 +1,5 @@
 ---
-import IconArrowX from "@/components/icons/icon-arrow-x
+import IconArrowX from "@/components/icons/icon-arrow-x"
 ---
 
 <section class="relative w-full">
@@ -7,55 +7,43 @@ import IconArrowX from "@/components/icons/icon-arrow-x
     navigation="true"
     navigation-next-el=".custom-next-button"
     navigation-prev-el=".custom-prev-button"
-    class="swiper-2 mx-auto w-56 rounded-2xl lg:mx-0 lg:w-[43.25rem]"
+    centered-slides="true"
+    slide-active-class=".swiper-slide-active"
+    breakpoints={{
+      640: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 5,
+        spaceBetween: 10,
+      },
+    }}
+    class="swiper-2 mx-auto w-56 rounded-2xl lg:mx-0 lg:w-full "
   >
     {
-      [...Array(6)].map((item, index) => (
+      [...Array(5)].map((item, index) => (
         <swiper-slide class="h-96 w-56 overflow-hidden rounded-2xl bg-white">
           <img
             src={`https://fakeimg.pl/224x384?text=${`Project${index + 1}`}&font=bebas`}
-            class="h-full w-full"
-            alt="palceholder image"
+            class="h-full"
+            alt="placeholder image"
           />
         </swiper-slide>
       ))
     }
   </swiper-container>
-
-  <div
-    class="custom-prev-button absolute left-4 top-1/2 -translate-y-1/2 transition-colors lg:-left-8"
-  >
-    <IconArrowX />
-  </div>
-  <div
-    class="custom-next-button absolute right-4 top-1/2 -translate-y-1/2 transition-colors lg:-right-8"
-  >
-    <IconArrowX right />
-  </div>
 </section>
 
 <style>
-  .custom-prev-button,
-  .custom-next-button {
-    background-color: white;
-    border-radius: 99999px;
-    padding: 0.04rem;
-    border: solid 4px black;
-    z-index: 1;
-  }
+.swiper-slide-active {
+  transform: scale(1.2);
+  margin-top: 20px;
+  z-index: 20;
+}
 
-  .custom-prev-button:hover,
-  .custom-next-button:hover {
-    @apply bg-primary;
-  }
-
-  @media (min-width: 1024px) {
-    .custom-prev-button,
-    .custom-next-button {
-      padding: 0.4rem;
-      border: solid 6px black;
-    }
-  }
 </style>
 
 <script>
@@ -65,20 +53,7 @@ import IconArrowX from "@/components/icons/icon-arrow-x
 
   // swiper parameters
   const swiperParams = {
-    slidesPerView: "auto",
-    loop: true,
     spaceBetween: 10,
-    breakpoints: {
-      640: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-    },
     on: {
       init() {
         // ...
