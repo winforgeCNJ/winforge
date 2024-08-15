@@ -1,5 +1,6 @@
 ---
 import IconArrowX from "@/components/icons/icon-arrow-x"
+import { Projects } from "../../../consts/projects.ts"
 ---
 
 <section class="relative w-full">
@@ -8,13 +9,14 @@ import IconArrowX from "@/components/icons/icon-arrow-x"
     navigation-next-el=".custom-next-button"
     navigation-prev-el=".custom-prev-button"
     centered-slides="true"
+    simulate-touch="true"
     slide-active-class=".swiper-slide-active"
     breakpoints={{
       640: {
         slidesPerView: 1,
       },
       768: {
-        slidesPerView: 2,
+        slidesPerView: 3,
       },
       1024: {
         slidesPerView: 5,
@@ -24,11 +26,11 @@ import IconArrowX from "@/components/icons/icon-arrow-x"
     class="swiper-2 mx-auto w-56 rounded-2xl lg:mx-0 lg:w-full "
   >
     {
-      [...Array(5)].map((item, index) => (
-        <swiper-slide class="h-96 w-56 overflow-hidden rounded-2xl bg-white">
+      Projects.map((item, index) => (
+        <swiper-slide class="h-96 w-56 overflow-hidden rounded-2xl flex items-center">
           <img
-            src={`https://fakeimg.pl/224x384?text=${`Project${index + 1}`}&font=bebas`}
-            class="h-full"
+            src={item.image}
+            class="w-32"
             alt="placeholder image"
           />
         </swiper-slide>
@@ -49,11 +51,12 @@ import IconArrowX from "@/components/icons/icon-arrow-x"
 <script>
   import { register } from "swiper/element/bundle";
   register();
-  const swiperEl = document.querySelector("swiper-container");
+  const swiperElProjects = document.querySelector("swiper-container");
 
   // swiper parameters
   const swiperParams = {
     spaceBetween: 10,
+    simulateTouch: true,
     on: {
       init() {
         // ...
@@ -62,8 +65,8 @@ import IconArrowX from "@/components/icons/icon-arrow-x"
   };
 
   // now we need to assign all parameters to Swiper element
-  Object.assign(swiperEl!, swiperParams);
+  Object.assign(swiperElProjects!, swiperParams);
 
   // and now initialize it
-  swiperEl!.initialize();
+  swiperElProjects!.initialize();
 </script>
