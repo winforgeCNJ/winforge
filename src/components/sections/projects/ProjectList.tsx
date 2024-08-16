@@ -5,8 +5,38 @@ import "swiper/css/bundle";
 import SwiperCore from "swiper";
 import { useState, useRef, useEffect } from "react";
 import { Projects } from "../../../consts/projects.ts";
+import "swiper/css/bundle";
+import SwiperCore from "swiper";
+import { useState, useRef, useEffect } from "react";
+import { Projects } from "../../../consts/projects.ts";
 
 const ProjectList = () => {
+  const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null);
+  const [swiperWrapper, setSwiperWrapper] = useState<HTMLElement | null>(null);
+  const [centeredSlide, setCenteredSlide] = useState<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const element = document.querySelector(".swiper-wrapper") as HTMLElement;
+    setSwiperWrapper(element);
+    swiperWrapper?.classList.add(
+      "flex",
+      "items-center",
+      "transition-all",
+      "duration-500",
+    );
+
+    const slideInCenter = document.querySelector(
+      ".swiper-slide-active",
+    ) as HTMLElement;
+    setCenteredSlide(slideInCenter);
+    centeredSlide?.classList.add("z-50");
+  });
+
+  const centerSlide = (id: number) => {
+    console.log(swiperInstance?.realIndex);
+
+    swiperInstance?.slideToLoop(id, 1000, true);
+  };
   const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null);
   const [swiperWrapper, setSwiperWrapper] = useState<HTMLElement | null>(null);
   const [centeredSlide, setCenteredSlide] = useState<HTMLElement | null>(null);
@@ -117,7 +147,12 @@ const ProjectList = () => {
     </Swiper>
   );
 };
+};
 
+export default ProjectList;
+
+{
+  /*
 export default ProjectList;
 
 {
@@ -138,5 +173,8 @@ export default ProjectList;
           </div>
         ))}
       </div>
+      */
+}
+
       */
 }
