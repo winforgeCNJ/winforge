@@ -6,7 +6,7 @@ import GraphicFigureLogo from "../widgets/graphic-figure-logo.astro";
 
 <section id="hero">
   <div
-    class="container relative flex h-auto w-full flex-col items-start pb-24 pt-20 lg:-mt-4 lg:min-h-[calc(100vh-10rem)] lg:justify-center lg:pt-0"
+    class="container relative flex h-auto w-full flex-col items-start pb-24 pt-48 lg:min-h-[calc(100vh-10rem)] lg:justify-center"
   >
     <section class="">
       <HeadinPrincipal
@@ -62,7 +62,7 @@ import GraphicFigureLogo from "../widgets/graphic-figure-logo.astro";
   .glow::before,
   .glow::after {
     content: "";
-    top: 12%;
+    top: 20%;
     left: -32%;
     position: absolute;
     opacity: 10;
@@ -80,11 +80,18 @@ import GraphicFigureLogo from "../widgets/graphic-figure-logo.astro";
     filter: blur(70px);
     transform: translateZ(0);
   }
+  @media (min-width: 640px) and (max-width: 1024px){
+    .glow::before,
+    .glow::after {
+      left: -10%;
+    }
+  }
 
   @media (min-width: 1024px) {
     .glow::before,
     .glow::after {
       left: -6%;
+      top: 22%;
     }
   }
 </style>
