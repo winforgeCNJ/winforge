@@ -1,6 +1,5 @@
 ---
 import ProjectList from "./ProjectList";
-import ProjectsList2 from "./projects-list copy.astro";
 import Title from "@/components/ui/title.astro";
 import Glow from "@/components/ui/glow.astro";
 ---
@@ -10,9 +9,7 @@ import Glow from "@/components/ui/glow.astro";
     class="oveflow-hidden relative flex h-[80vh] flex-col items-start justify-center gap-x-12 gap-y-3 pb-44 lg:pb-0"
   >
     <Title title="Proyectos" active="Forjados" className="container"/>
-    <Title title="Proyectos" active="Forjados" className="container"/>
-
-      <ProjectList client:only/>
+    
       <ProjectList client:only/>
     </div>
   </div>
