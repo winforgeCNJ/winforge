@@ -5,6 +5,7 @@ import "swiper/css/bundle";
 import SwiperCore from "swiper";
 import { useState, useRef, useEffect } from "react";
 import { Projects } from "../../../consts/projects.ts";
+import "swiper/css/bundle";
 
 const ProjectList = () => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null);
@@ -118,25 +119,6 @@ const ProjectList = () => {
   );
 };
 
+
 export default ProjectList;
 
-{
-  /*
-      <div
-        className="flex w-[85vw] rounded-2xl items-center jus"
-      >
-        {[...Array(5)].map((item, index) => (
-          <div className="overflow-hidden rounded-2xl hover:cursor-pointer"
-            onClick={() => handleClick}
-          >
-            <img
-              key={index}
-              src={"../../../../public/assets/projects/Cong. Educ. Hum..webp"}
-              className="h-full"
-              alt="placeholder image"
-            />
-          </div>
-        ))}
-      </div>
-      */
-}
