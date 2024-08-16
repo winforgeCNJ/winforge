@@ -22,7 +22,7 @@ export const navigation = [
   {
     id: 5,
     title: "Casos de Éxito",
-    href: "#clients",
+    href: "#projects",
   },
   {
     id: 6,
