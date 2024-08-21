@@ -22,13 +22,13 @@ const tabs = [
     content: (
       <ServiceCard
         service={{
-          title: "Desarrollo de Identidada visual y Comunicativa",
+          title: "Desarrollo de Identidad Visual y Comunicativa",
           bold1: "Manual de Marca",
           text1:
             "Logo, Isologo, Isotipo, Naming, Branding, Paleta de Colores Institucionales, Tipografías",
           bold2: "Espíritu e Identidad",
           text2: "Misión, Visión, Valores, Voz y Tono",
-          footer: ["Página Web", "Eventos", "Diseño Editorial"],
+          footer: ["Landing Page", "Eventos", "Diseño Editorial"],
         }}
       />
     ),
@@ -61,13 +61,13 @@ const tabs = [
     content: (
       <ServiceCard
         service={{
-          title: "Gestión multimedia",
-          bold1: "Planificación de Contenido en RRSS",
+          title: "Gestión Multimedia",
+          bold1: "Planificación de Contenido en RR.SS.",
           text1:
-            "Instagram, Youtube, Tik Tok, Facebook,  Linkedin, Twitter, Mail",
-          bold2: "Posicionamiento adecuado",
+            "Instagram, YouTube, TikTok, Facebook, LinkedIn, Twitter, Mail",
+          bold2: "Posicionamiento Diferenciado",
           text2:
-            "Optimización SEO, Estetica Integral, Marketing Digital, Análisis estratégico de métricas y tendencias.",
+            "Optimización SEO, Estética Integral, Marketing Digital, Análisis estratégico de métricas y tendencias.",
           footer: [],
         }}
       />
@@ -81,13 +81,13 @@ const tabs = [
     content: (
       <ServiceCard
         service={{
-          title: "Producción de contenido audiovisual",
+          title: "Producción de Contenido Audiovisual",
           bold1: "Brainstorming y Guionización",
           text1:
-            "Trabajamos con el cliente para generar ideas y crear contendio acorde a lo que necesiten.",
+            "Trabajamos con el cliente para generar ideas y crear contenido acorde a lo que necesiten.",
           bold2: "Grabación y Edición de Calidad",
           text2:
-            "Con Softwares avanzados generamos un producto final profesional y de gran impacto.",
+            "Con Softwares avanzados, generamos un producto final profesional y de gran impacto.",
           footer: ["Videos Institucionales", "Reels", "Imágenes"],
         }}
       />
