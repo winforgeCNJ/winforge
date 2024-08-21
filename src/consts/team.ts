@@ -13,7 +13,7 @@ export const team = [
   },
   {
     id: 2,
-    name: "Ciro Luján",
+    name: "Ciro Lujan",
     rol: "CFO",
     image: "/assets/team/Ciro.avif",
   },

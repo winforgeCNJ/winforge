@@ -23,15 +23,31 @@ export default function WordRotate({
   className,
 }: WordRotateProps) {
   const [index, setIndex] = useState(0);
+  const [isPageVisible, setIsPageVisible] = useState(true);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, duration);
+    let interval: ReturnType<typeof setInterval> | undefined;
+
+    const handleVisibilityChange = () => {
+      setIsPageVisible(!document.hidden);
+    };
+
+    const startInterval = () => {
+      interval = setInterval(() => {
+        setIndex((prevIndex) => (prevIndex + 1) % words.length);
+      }, duration);
+    };
+    if (isPageVisible) {
+      startInterval();
+    } else if (interval) {
+      clearInterval(interval);
+    }
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
 
     // Clean up interval on unmount
     return () => clearInterval(interval);
-  }, [words, duration]);
+  }, [words, duration, isPageVisible]);
 
   return (
     <div className="mb-4 w-[17rem] animate-fade-in-up overflow-hidden text-[16px] font-medium text-secondary animate-delay-[1200ms] animate-duration-500 sm:w-[25rem] sm:text-[20px] md:w-[34rem] md:text-[26px] md:leading-9 lg:text-[28px]">
