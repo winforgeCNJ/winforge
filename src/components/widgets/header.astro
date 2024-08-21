@@ -61,21 +61,39 @@ import Nav from "./nav.astro";
   });
 
   let position = 0;
+  let header = document.querySelector("header") as HTMLElement;
   const handleScroll = () => {
-    let headerClassList = document.querySelector("header")?.classList;
+
     if (position < window.scrollY) {
-      headerClassList?.remove("opacity-100");
-      headerClassList?.add("opacity-0");
+      header.classList?.remove("opacity-100");
+      header.classList?.add("opacity-0");
       position = window.scrollY;
     } else if (position > window.scrollY) {
-      headerClassList?.remove("opacity-0", "absolute");
-      headerClassList?.add("fixed", "opacity-100", "bg-black/100");
+      header.classList?.remove("opacity-0", "absolute");
+      header.classList?.add("fixed", "opacity-100", "bg-black/100");
       position = window.scrollY;
       if (position <= 125) {
-        headerClassList?.remove("bg-black/100")
+        header.classList?.remove("bg-black/100")
       }
     }
   };
 
   window.addEventListener("scroll", handleScroll);
+
+  const handleMouseEnter = () => {
+    header.classList?.add("opacity-100")
+    header.classList?.remove("opacity-0")
+  }
+  const handleMouseLeave = () => {
+    if(position > 150){
+      header.classList?.remove("opacity-100")
+      header.classList?.add("opacity-0")
+    }
+  }
+  
+    header.addEventListener("mouseleave", handleMouseLeave)
+  
+  
+  header.addEventListener("mouseenter", handleMouseEnter )
+  
 </script>

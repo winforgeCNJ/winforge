@@ -13,7 +13,7 @@ export const Projects = [
   },
   {
     id: 2,
-    name: "Ancora Ediciones",
+    name: "Áncora Ediciones",
     image: "/assets/projects/ANCORA.png",
     width: "95px",
   },
@@ -25,7 +25,7 @@ export const Projects = [
   },
   {
     id: 4,
-    name: "Jardin Surcos",
+    name: "Jardín Surcos",
     image: "/assets/projects/Jardin-Surcos.png",
     width: "105px",
   },
